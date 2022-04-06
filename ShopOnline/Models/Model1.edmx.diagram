@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="77f82a6a609f4d65b4819da5d4a1844c" Name="Diagram1">
+        <EntityTypeShape EntityType="ShoppingModel.Bill" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShoppingModel.CategoryProduct" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShoppingModel.Customer" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShoppingModel.DetailBill" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShoppingModel.Employee" Width="1.5" PointX="8" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShoppingModel.Position" Width="1.5" PointX="5.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShoppingModel.Product" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShoppingModel.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="ShoppingModel.FK__Bill__CusID__04E4BC85" ManuallyRouted="false" />
+        <AssociationConnector Association="ShoppingModel.FK__DetailBil__BillI__08B54D69" ManuallyRouted="false" />
+        <AssociationConnector Association="ShoppingModel.FK__Product__CatePro__6FE99F9F" ManuallyRouted="false" />
+        <AssociationConnector Association="ShoppingModel.FK__DetailBil__Produ__07C12930" ManuallyRouted="false" />
+        <AssociationConnector Association="ShoppingModel.FK__Employee__Positi__5812160E" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
