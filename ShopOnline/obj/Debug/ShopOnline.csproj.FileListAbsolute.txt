@@ -161,6 +161,5 @@ C:\GitHub\GitHub\ShopOnline\bin\Antlr3.Runtime.pdb
 C:\GitHub\GitHub\ShopOnline\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\GitHub\GitHub\ShopOnline\obj\Debug\ShopOnline.csproj.AssemblyReference.cache
 C:\GitHub\GitHub\ShopOnline\obj\Debug\ShopOnline.csproj.CoreCompileInputs.cache
-C:\GitHub\GitHub\ShopOnline\obj\Debug\ShopOnline.csproj.CopyComplete
 C:\GitHub\GitHub\ShopOnline\obj\Debug\ShopOnline.dll
 C:\GitHub\GitHub\ShopOnline\obj\Debug\ShopOnline.pdb
