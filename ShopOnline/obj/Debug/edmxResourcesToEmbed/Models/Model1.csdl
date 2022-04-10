@@ -13,8 +13,8 @@
     <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="TypeBill" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="CreditCardID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Customer" Relationship="Self.FK__Bill__CusID__04E4BC85" FromRole="Bill" ToRole="Customer" />
-    <NavigationProperty Name="DetailBills" Relationship="Self.FK__DetailBil__BillI__08B54D69" FromRole="Bill" ToRole="DetailBill" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK__Bill__CusID__21B6055D" FromRole="Bill" ToRole="Customer" />
+    <NavigationProperty Name="DetailBills" Relationship="Self.FK__DetailBil__BillI__25869641" FromRole="Bill" ToRole="DetailBill" />
   </EntityType>
   <EntityType Name="CategoryProduct">
     <Key>
@@ -22,7 +22,7 @@
     </Key>
     <Property Name="CateID" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="CateName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Products" Relationship="Self.FK__Product__CatePro__6FE99F9F" FromRole="CategoryProduct" ToRole="Product" />
+    <NavigationProperty Name="Products" Relationship="Self.FK__Product__CatePro__1B0907CE" FromRole="CategoryProduct" ToRole="Product" />
   </EntityType>
   <EntityType Name="Customer">
     <Key>
@@ -35,7 +35,8 @@
     <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Image" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Bills" Relationship="Self.FK__Bill__CusID__04E4BC85" FromRole="Customer" ToRole="Bill" />
+    <NavigationProperty Name="Bills" Relationship="Self.FK__Bill__CusID__21B6055D" FromRole="Customer" ToRole="Bill" />
+    <NavigationProperty Name="UserCarts" Relationship="Self.fk_id_user" FromRole="Customer" ToRole="UserCart" />
   </EntityType>
   <EntityType Name="DetailBill">
     <Key>
@@ -47,8 +48,8 @@
     <Property Name="Amount" Type="Int32" Nullable="false" />
     <Property Name="Price" Type="Decimal" Precision="18" Scale="3" Nullable="false" />
     <Property Name="TotalPrice" Type="Decimal" Precision="18" Scale="3" Nullable="false" />
-    <NavigationProperty Name="Bill" Relationship="Self.FK__DetailBil__BillI__08B54D69" FromRole="DetailBill" ToRole="Bill" />
-    <NavigationProperty Name="Product" Relationship="Self.FK__DetailBil__Produ__07C12930" FromRole="DetailBill" ToRole="Product" />
+    <NavigationProperty Name="Bill" Relationship="Self.FK__DetailBil__BillI__25869641" FromRole="DetailBill" ToRole="Bill" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__DetailBil__Produ__24927208" FromRole="DetailBill" ToRole="Product" />
   </EntityType>
   <EntityType Name="Employee">
     <Key>
@@ -63,7 +64,7 @@
     <Property Name="Image" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Phone" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="PositionID" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Position" Relationship="Self.FK__Employee__Positi__5812160E" FromRole="Employee" ToRole="Position" />
+    <NavigationProperty Name="Position" Relationship="Self.FK__Employee__Positi__164452B1" FromRole="Employee" ToRole="Position" />
   </EntityType>
   <EntityType Name="Position">
     <Key>
@@ -71,7 +72,7 @@
     </Key>
     <Property Name="PositionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="PositionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Employees" Relationship="Self.FK__Employee__Positi__5812160E" FromRole="Position" ToRole="Employee" />
+    <NavigationProperty Name="Employees" Relationship="Self.FK__Employee__Positi__164452B1" FromRole="Position" ToRole="Employee" />
   </EntityType>
   <EntityType Name="Product">
     <Key>
@@ -85,8 +86,9 @@
     <Property Name="Image" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Detail" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
     <Property Name="Warranty" Type="DateTime" Precision="0" />
-    <NavigationProperty Name="CategoryProduct" Relationship="Self.FK__Product__CatePro__6FE99F9F" FromRole="Product" ToRole="CategoryProduct" />
-    <NavigationProperty Name="DetailBills" Relationship="Self.FK__DetailBil__Produ__07C12930" FromRole="Product" ToRole="DetailBill" />
+    <NavigationProperty Name="CategoryProduct" Relationship="Self.FK__Product__CatePro__1B0907CE" FromRole="Product" ToRole="CategoryProduct" />
+    <NavigationProperty Name="DetailBills" Relationship="Self.FK__DetailBil__Produ__24927208" FromRole="Product" ToRole="DetailBill" />
+    <NavigationProperty Name="UserCarts" Relationship="Self.fk_id_product" FromRole="Product" ToRole="UserCart" />
   </EntityType>
   <EntityType Name="sysdiagram">
     <Key>
@@ -98,7 +100,17 @@
     <Property Name="version" Type="Int32" />
     <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
-  <Association Name="FK__Bill__CusID__04E4BC85">
+  <EntityType Name="UserCart">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="ProductID" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Customer" Relationship="Self.fk_id_user" FromRole="UserCart" ToRole="Customer" />
+    <NavigationProperty Name="Product" Relationship="Self.fk_id_product" FromRole="UserCart" ToRole="Product" />
+  </EntityType>
+  <Association Name="FK__Bill__CusID__21B6055D">
     <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
     <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
     <ReferentialConstraint>
@@ -110,7 +122,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__DetailBil__BillI__08B54D69">
+  <Association Name="FK__DetailBil__BillI__25869641">
     <End Role="Bill" Type="Self.Bill" Multiplicity="1" />
     <End Role="DetailBill" Type="Self.DetailBill" Multiplicity="*" />
     <ReferentialConstraint>
@@ -122,7 +134,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Product__CatePro__6FE99F9F">
+  <Association Name="FK__Product__CatePro__1B0907CE">
     <End Role="CategoryProduct" Type="Self.CategoryProduct" Multiplicity="1" />
     <End Role="Product" Type="Self.Product" Multiplicity="*" />
     <ReferentialConstraint>
@@ -134,7 +146,19 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__DetailBil__Produ__07C12930">
+  <Association Name="fk_id_user">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="UserCart" Type="Self.UserCart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CusID" />
+      </Principal>
+      <Dependent Role="UserCart">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DetailBil__Produ__24927208">
     <End Role="Product" Type="Self.Product" Multiplicity="1" />
     <End Role="DetailBill" Type="Self.DetailBill" Multiplicity="*" />
     <ReferentialConstraint>
@@ -146,7 +170,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Employee__Positi__5812160E">
+  <Association Name="FK__Employee__Positi__164452B1">
     <End Role="Position" Type="Self.Position" Multiplicity="1" />
     <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
     <ReferentialConstraint>
@@ -155,6 +179,18 @@
       </Principal>
       <Dependent Role="Employee">
         <PropertyRef Name="PositionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_id_product">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="UserCart" Type="Self.UserCart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="UserCart">
+        <PropertyRef Name="ProductID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -167,25 +203,34 @@
     <EntitySet Name="Positions" EntityType="Self.Position" />
     <EntitySet Name="Products" EntityType="Self.Product" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-    <AssociationSet Name="FK__Bill__CusID__04E4BC85" Association="Self.FK__Bill__CusID__04E4BC85">
+    <EntitySet Name="UserCarts" EntityType="Self.UserCart" />
+    <AssociationSet Name="FK__Bill__CusID__21B6055D" Association="Self.FK__Bill__CusID__21B6055D">
       <End Role="Customer" EntitySet="Customers" />
       <End Role="Bill" EntitySet="Bills" />
     </AssociationSet>
-    <AssociationSet Name="FK__DetailBil__BillI__08B54D69" Association="Self.FK__DetailBil__BillI__08B54D69">
+    <AssociationSet Name="FK__DetailBil__BillI__25869641" Association="Self.FK__DetailBil__BillI__25869641">
       <End Role="Bill" EntitySet="Bills" />
       <End Role="DetailBill" EntitySet="DetailBills" />
     </AssociationSet>
-    <AssociationSet Name="FK__Product__CatePro__6FE99F9F" Association="Self.FK__Product__CatePro__6FE99F9F">
+    <AssociationSet Name="FK__Product__CatePro__1B0907CE" Association="Self.FK__Product__CatePro__1B0907CE">
       <End Role="CategoryProduct" EntitySet="CategoryProducts" />
       <End Role="Product" EntitySet="Products" />
     </AssociationSet>
-    <AssociationSet Name="FK__DetailBil__Produ__07C12930" Association="Self.FK__DetailBil__Produ__07C12930">
+    <AssociationSet Name="fk_id_user" Association="Self.fk_id_user">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="UserCart" EntitySet="UserCarts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DetailBil__Produ__24927208" Association="Self.FK__DetailBil__Produ__24927208">
       <End Role="Product" EntitySet="Products" />
       <End Role="DetailBill" EntitySet="DetailBills" />
     </AssociationSet>
-    <AssociationSet Name="FK__Employee__Positi__5812160E" Association="Self.FK__Employee__Positi__5812160E">
+    <AssociationSet Name="FK__Employee__Positi__164452B1" Association="Self.FK__Employee__Positi__164452B1">
       <End Role="Position" EntitySet="Positions" />
       <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="fk_id_product" Association="Self.fk_id_product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="UserCart" EntitySet="UserCarts" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

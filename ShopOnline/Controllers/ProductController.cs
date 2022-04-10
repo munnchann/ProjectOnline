@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShopOnline.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,11 +9,14 @@ namespace ShopOnline.Controllers
 {
     public class ProductController : Controller
     {
+        Models.ShoppingEntities db = new Models.ShoppingEntities();
         // GET: Product
 
         public ActionResult Index()
         {
-            return View();
+            var q = new List<Product>();
+            q = db.Products.ToList();
+            return View(q);
         }
 
         public ActionResult Product()

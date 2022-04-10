@@ -33,5 +33,6 @@ namespace ShopOnline.Models
         public virtual DbSet<Position> Positions { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<UserCart> UserCarts { get; set; }
     }
 }

@@ -11,8 +11,7 @@ namespace ShopOnline.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class CategoryProduct
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,9 +19,8 @@ namespace ShopOnline.Models
         {
             this.Products = new HashSet<Product>();
         }
-       [Display(Name = "Mã S?n Ph?m")]
+    
         public string CateID { get; set; }
-        [Display(Name = "Tên S?n Ph?m")]
         public string CateName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -1,5 +1,4 @@
 ﻿using ShopOnline.Models;
-using ShopOnline.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
