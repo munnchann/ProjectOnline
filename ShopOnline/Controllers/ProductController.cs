@@ -1,6 +1,7 @@
 ﻿using ShopOnline.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -22,6 +23,58 @@ namespace ShopOnline.Controllers
         public ActionResult Product()
         {
             return View();
+        }
+        public static List<CategoryProduct> SelectAllArticle1()
+        {
+            var rtn = new List<CategoryProduct>();
+            using (var context = new ShoppingEntities())
+            {
+                foreach (var item in context.CategoryProducts)
+                {
+                    rtn.Add(new CategoryProduct
+                    {
+                        CateID = item.CateID,
+                        CateName = item.CateName,
+                    });
+                }
+            }
+            return rtn;
+        }
+        public ActionResult AddProduct()
+        {
+            Product product = new Product();
+            List<CategoryProduct> list = SelectAllArticle1().ToList();
+            ViewBag.listCate = new SelectList(list, "CateID", "CateName", "");
+            return View(product);
+        }
+     
+
+        [HttpPost]
+        public ActionResult AddProduct(Product model)
+        {
+            RandomGenerator_Product randomGenerator = new RandomGenerator_Product();
+            Product pro = new Product();
+            List<CategoryProduct> list = SelectAllArticle1().ToList();
+            ViewBag.listCate = new SelectList(list, "CateID", "CateName", 1);
+            pro.CateProduct = model.CateProduct;
+            pro.ProductID = randomGenerator.Generate()+ model.CateProduct;
+            pro.ProductName = model.ProductName;   
+            pro.Amount = model.Amount;
+            pro.Price = model.Price;
+            pro.Detail = model.Detail;
+            pro.Warranty = model.Warranty;
+            pro.Image = model.Image;
+            if (model.UploadImage != null)
+            {
+                string filename = Path.GetFileNameWithoutExtension(model.UploadImage.FileName);
+                string extent = Path.GetExtension(model.UploadImage.FileName);
+                filename = filename + extent;
+                model.Image = "~/Content/images/" + filename;
+                model.UploadImage.SaveAs(Path.Combine(Server.MapPath("~/Content/images/"), filename));
+            }
+            db.Products.Add(pro);
+            db.SaveChanges();
+            return View(pro);
         }
     }
 }

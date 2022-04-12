@@ -11,7 +11,9 @@ namespace ShopOnline.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Web;
+
     public partial class Product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -29,7 +31,9 @@ namespace ShopOnline.Models
         public string Image { get; set; }
         public string Detail { get; set; }
         public Nullable<System.DateTime> Warranty { get; set; }
-    
+
+        [NotMapped]
+        public HttpPostedFileBase UploadImage { get; set; }
         public virtual CategoryProduct CategoryProduct { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetailBill> DetailBills { get; set; }

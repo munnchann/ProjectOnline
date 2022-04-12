@@ -179,6 +179,7 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ProductViewModel.cs" />
+    <Compile Include="Models\RandomGenerator_Product.cs" />
     <Compile Include="Models\RandomGenerator.cs" />
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -383,6 +384,7 @@
     <Content Include="Views\Login\Register.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Login\LoginUser.cshtml" />
+    <Content Include="Views\Product\AddProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
