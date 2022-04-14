@@ -1,45 +1,44 @@
-﻿////var SiteController = function () {
-////    this.initialize = function () {
-////        loadCart();
-////    }
-////    function loadCart() {
-////        $.ajax({
-////            type: "GET",
-////            url: "/" + '/Cart/GetListItems',
-////            success: function (res) {
-////                $('#CartCount').text(@Session["count"]);
-////            }
-////        });
-////    }
-//    function regsiterEvents() {
-//        // Write your JavaScript code.
-//        $('body').on('click', '.btn-add-cart', function (e) {
-//            e.preventDefault();
-//            const culture = $('#hidCulture').val();
-//            const id = $(this).data('id');
-//            $.ajax({
-//                type: "POST",
-//                url: "/" + culture + '/Cart/AddToCart',
-//                data: {
-//                    id: id,
-//                    languageId: culture,
-//                },
-//                success: function (res) {
-
-//                    $('#lbl_number_items_header').text(res.length);
-
-//                },
-//                error: function (err) {
-
-//                    console.log(err);
-
-//                }
-//            });
-//        });
-//    }
-}
-
-
-function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+﻿var SiteController = function () {
+    this.initialize = function () {
+        regsiterEvents();
+        loadCart();
+        
+    }
+    function loadCart() {
+        $.ajax({
+            type: "GET",
+            url: "/" + '/Cart/GetListItems',
+            success: function (res) {
+                $('#CartCount').text(res.length);
+            }
+        });
+    }
+    function regsiterEvents() {
+        $(".btn-add-cart").click(function () {
+            $.ajax({
+                url: "/Cart/AddToCart",
+                data: {
+                    productId: $(this).data("id"),
+                },
+                success: function (data) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Thêm giỏ hàng thành công',
+                        showConfirmButton: false,
+                        timer: 2500
+                    });
+                    $('#CartCount').text(res.length);
+                },
+                error: function () {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Thêm giỏ hàng thất bại',
+                        text: 'Vui lòng thử lại',
+                        showConfirmButton: false,
+                        timer: 2500
+                    });
+                }
+            });
+        });
+    }
 }

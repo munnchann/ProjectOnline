@@ -1,5 +1,5 @@
-﻿using Newtonsoft.Json;
-using ShopOnline.Constants;
+﻿using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 using ShopOnline.Models;
 using System;
 using System.Collections.Generic;
@@ -12,9 +12,16 @@ namespace ShopOnline.Controllers
 {
     public class CartController : Controller
     {
+        //private readonly string _clientId;
+        //private readonly string _secretKey;
         Models.ShoppingEntities db = new Models.ShoppingEntities();
         private const string CartSession = "CartSession";
         // GET: Cart
+        //public CartController(IConfiguration config)
+        //{
+        //    _clientId = config["PaypalSettings:ClientId"];
+        //    _secretKey = config["PaypalSettings:SecretKey"];
+        //}
         [HttpGet]
         public ActionResult Index()
         {
@@ -30,26 +37,25 @@ namespace ShopOnline.Controllers
         public ActionResult GetListItems()
         {
             var session = Session[CartSession];
-            List<CartModel> currentCart = new List<CartModel>();
+            var currentCart = new List<CartModel>();
             if (session != null)
             {
                 currentCart = (List<CartModel>)session;
             }
             return View(currentCart);
         }
-
         public ActionResult AddToCart(string productId)
         {
             var session = Session[CartSession];
             if (session == null)
             {
-                List<CartModel> currentCart = new List<CartModel>();
-                currentCart.Add(new CartModel
+                List<CartModel> cart = new List<CartModel>();
+                cart.Add(new CartModel
                 {
                     product = db.Products.Find(productId),
                     Quantity = 1
                 });
-                Session[CartSession] = currentCart;
+                Session[CartSession] = cart;
                 Session["count"] = 1;
             }
             else
@@ -62,12 +68,8 @@ namespace ShopOnline.Controllers
                 }
                 else
                 {
-                    cart.Add(new CartModel
-                    {
-                        product = db.Products.Find(productId),
-                        Quantity = 1
-                    });
-                    Session["count"] = Convert.ToInt32(Session["count"]) + 1;
+                    cart.Add(new CartModel{product = db.Products.Find(productId),Quantity = 1});
+                    Session["count"] = Convert.ToInt32(Session["count"])+ 1;
                 }
                 Session[CartSession] = cart;
             }
@@ -104,11 +106,7 @@ namespace ShopOnline.Controllers
                 }
 
             Session[CartSession] = currentCart;
-            //return RedirectToAction("Index","Cart");
-            return Json(new
-            {
-                status = true
-            });
+            return Json(new { Message = "Thành công", JsonRequestBehavior.AllowGet });
         }
         
         public ActionResult DeleteAll()
@@ -135,7 +133,34 @@ namespace ShopOnline.Controllers
         }
         public ActionResult Checkout()
         {
-            return View();
+            if(Session["id"]== null)
+            {
+                return RedirectToAction("LoginUser", "Login");
+            }
+            if(Session["address"].ToString() == "TPHCM")
+            {
+                ViewBag.Address = 1;
+            }
+            if (Session["address"].ToString() == "Thành phố Hồ Chí Minh")
+            {
+                ViewBag.Address = 1;
+            }
+            if (Session["address"].ToString() == "Hà Nội")
+            {
+                ViewBag.Address = 2;
+            }
+            if (Session["address"].ToString() == "HN")
+            {
+                ViewBag.Address = 2;
+            }
+            var session = Session[CartSession];
+            List<CartModel> currentCart = new List<CartModel>();
+            if (session != null)
+            {
+                currentCart = (List<CartModel>)session;
+            }
+            return View(currentCart);
+
         }
     }
 }

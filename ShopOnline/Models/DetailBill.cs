@@ -16,12 +16,16 @@ namespace ShopOnline.Models
     {
         public int ID { get; set; }
         public string ProductID { get; set; }
-        public int BillID { get; set; }
+        public string BillID { get; set; }
         public int Amount { get; set; }
         public decimal Price { get; set; }
         public decimal TotalPrice { get; set; }
     
         public virtual Bill Bill { get; set; }
         public virtual Product Product { get; set; }
+        public virtual DetailBill DetailBill1 { get; set; }
+        public virtual DetailBill DetailBill2 { get; set; }
+        public virtual DetailBill DetailBill11 { get; set; }
+        public virtual DetailBill DetailBill3 { get; set; }
     }
 }

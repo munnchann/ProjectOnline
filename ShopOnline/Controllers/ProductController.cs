@@ -63,15 +63,13 @@ namespace ShopOnline.Controllers
             pro.Price = model.Price;
             pro.Detail = model.Detail;
             pro.Warranty = model.Warranty;
+
+            string fileName = Path.GetFileNameWithoutExtension(model.UploadImage.FileName);
+            string extension = Path.GetExtension(model.UploadImage.FileName);
+            fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+            model.Image = fileName;
+            fileName = Path.Combine(Server.MapPath("~/Content/Images/"), fileName);
             pro.Image = model.Image;
-            if (model.UploadImage != null)
-            {
-                string filename = Path.GetFileNameWithoutExtension(model.UploadImage.FileName);
-                string extent = Path.GetExtension(model.UploadImage.FileName);
-                filename = filename + extent;
-                model.Image = "~/Content/images/" + filename;
-                model.UploadImage.SaveAs(Path.Combine(Server.MapPath("~/Content/images/"), filename));
-            }
             db.Products.Add(pro);
             db.SaveChanges();
             return View(pro);

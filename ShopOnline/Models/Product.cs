@@ -31,6 +31,7 @@ namespace ShopOnline.Models
         public string Image { get; set; }
         public string Detail { get; set; }
         public Nullable<System.DateTime> Warranty { get; set; }
+        
 
         [NotMapped]
         public HttpPostedFileBase UploadImage { get; set; }

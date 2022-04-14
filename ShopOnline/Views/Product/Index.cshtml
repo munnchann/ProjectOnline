@@ -2,10 +2,16 @@
 @model List<ShopOnline.Models.Product>
 
 @{ ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml"; 
-    }
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
-
+@*@section scripts{
+    <script src="~/Scripts/site.js"></script>
+    <script>
+        var site = new SiteController();
+        site.initialize();
+    </script>
+}*@
 <div class="bg-light py-3">
     <div class="container">
         <div class="row">
@@ -48,31 +54,30 @@
                         </div>
                     </div>
                 </div>
-                @foreach (var item in Model)
-                {
-    <div class="row mb-5">
+                <div class="row mb-5">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
+                            <div class="block-4 text-center border">
+                                <figure class="block-4-image">
+                                    <a href="shop-single.html"><img src="~/Content/Images/@item.Image" alt="Image placeholder" class="img-fluid"></a>
+                                </figure>
+                                <div class="block-4-text p-4">
+                                    <h3><a href="@item.ProductID">@item.ProductName</a></h3>
+                                    <p class="text-primary font-weight-bold">$@item.Price</p>
+                                    <p class="mb-0">
 
-        <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
-            <div class="block-4 text-center border">
-                <figure class="block-4-image">
-                    <a href="shop-single.html"><img src="@item.Image" alt="Image placeholder" class="img-fluid"></a>
-                </figure>
-                <div class="block-4-text p-4">
-                    <h3><a href="@item.ProductID">@item.ProductName</a></h3>
-                    <p class="text-primary font-weight-bold">$@item.Price</p>
-                    <p class="mb-0">
+                                        <a class="btn btn-add-cart" data-id="@item.ProductID">
+                                            Add to <i class="icon-shopping-cart"></i>
+                                        </a>
 
-                        <a class="btn btn-add-cart" data-id="@item.ProductID">
-                            Add to <i class="icon-shopping-cart"></i>
-                        </a>
+                                    </p>
 
-                    </p>
-
+                                </div>
+                            </div>
+                        </div>
+                    }
                 </div>
-            </div>
-        </div>
-
-    </div>}
                 <div class="row" data-aos="fade-up">
                     <div class="col-md-12 text-center">
                         <div class="site-block-27">
@@ -190,31 +195,33 @@
 
     </div>
 </div>
-<script>$(document).ready(function () {
-            $(".btn-add-cart").click(function () {
-                $.ajax({
-                    url: "/Cart/AddToCart",
-                    data: {
-                        productId: $(this).data("id"),
-                    },
-                    success: function (data) {
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Thêm giỏ hàng thành công',
-                            showConfirmButton: false,
-                            timer: 2500
-                        });
-                        $('#CartCount').text(@Session["count"] + 1);
-                    },
-                    error: function () {
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Thêm giỏ hàng thất bại',
-                            text: 'Vui lòng thử lại',
-                            showConfirmButton: false,
-                            timer: 2500
-                        });
-                    }
-                });
+<script>
+$(document).ready(function () {
+    $(".btn-add-cart").click(function () {
+            $.ajax({
+                url: "/Cart/AddToCart",
+                data: {
+                    productId: $(this).data("id"),
+                },
+                success: function (data) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Thêm giỏ hàng thành công',
+                        showConfirmButton: false,
+                        timer: 2500
+                    });
+                    $('#CartCount').html(@Session["count"] + 1);
+                   /* window.location.href = "/Product";*/
+                },
+                error: function () {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Thêm giỏ hàng thất bại',
+                        text: 'Vui lòng thử lại',
+                        showConfirmButton: false,
+                        timer: 2500
+                    });
+                }
             });
-        });</script>
+        });
+    });</script>

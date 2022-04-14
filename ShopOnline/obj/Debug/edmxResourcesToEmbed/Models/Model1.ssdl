@@ -4,12 +4,12 @@
     <Key>
       <PropertyRef Name="BillID" />
     </Key>
-    <Property Name="BillID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BillID" Type="varchar" MaxLength="16" Nullable="false" />
     <Property Name="CusID" Type="int" Nullable="false" />
     <Property Name="DateOrder" Type="date" Nullable="false" />
     <Property Name="TransportPrice" Type="decimal" Precision="18" Scale="3" Nullable="false" />
-    <Property Name="TotalPayment" Type="decimal" Precision="18" Scale="3" Nullable="false" />
-    <Property Name="EmployeeID" Type="int" Nullable="false" />
+    <Property Name="TotalPayment" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="EmployeeID" Type="int" />
     <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="TypeBill" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="CreditCardID" Type="varchar" MaxLength="50" />
@@ -39,7 +39,7 @@
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ProductID" Type="varchar" MaxLength="7" Nullable="false" />
-    <Property Name="BillID" Type="int" Nullable="false" />
+    <Property Name="BillID" Type="varchar" MaxLength="16" Nullable="false" />
     <Property Name="Amount" Type="int" Nullable="false" />
     <Property Name="Price" Type="decimal" Precision="18" Scale="3" Nullable="false" />
     <Property Name="TotalPrice" Type="decimal" Precision="18" Scale="3" Nullable="false" />
@@ -108,18 +108,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__DetailBil__BillI__25869641">
-    <End Role="Bill" Type="Self.Bill" Multiplicity="1" />
-    <End Role="DetailBill" Type="Self.DetailBill" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Bill">
-        <PropertyRef Name="BillID" />
-      </Principal>
-      <Dependent Role="DetailBill">
-        <PropertyRef Name="BillID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__DetailBil__Produ__24927208">
     <End Role="Product" Type="Self.Product" Multiplicity="1" />
     <End Role="DetailBill" Type="Self.DetailBill" Multiplicity="*" />
@@ -153,6 +141,42 @@
       </Principal>
       <Dependent Role="Product">
         <PropertyRef Name="CateProduct" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_detail_bill">
+    <End Role="Bill" Type="Self.Bill" Multiplicity="1" />
+    <End Role="DetailBill" Type="Self.DetailBill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bill">
+        <PropertyRef Name="BillID" />
+      </Principal>
+      <Dependent Role="DetailBill">
+        <PropertyRef Name="BillID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetailBill_DetailBill">
+    <End Role="DetailBill" Type="Self.DetailBill" Multiplicity="1" />
+    <End Role="DetailBill1" Type="Self.DetailBill" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="DetailBill">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DetailBill1">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetailBill_DetailBill1">
+    <End Role="DetailBill" Type="Self.DetailBill" Multiplicity="1" />
+    <End Role="DetailBill1" Type="Self.DetailBill" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="DetailBill">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DetailBill1">
+        <PropertyRef Name="ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -194,10 +218,6 @@
       <End Role="Customer" EntitySet="Customer" />
       <End Role="Bill" EntitySet="Bill" />
     </AssociationSet>
-    <AssociationSet Name="FK__DetailBil__BillI__25869641" Association="Self.FK__DetailBil__BillI__25869641">
-      <End Role="Bill" EntitySet="Bill" />
-      <End Role="DetailBill" EntitySet="DetailBill" />
-    </AssociationSet>
     <AssociationSet Name="FK__DetailBil__Produ__24927208" Association="Self.FK__DetailBil__Produ__24927208">
       <End Role="Product" EntitySet="Product" />
       <End Role="DetailBill" EntitySet="DetailBill" />
@@ -209,6 +229,18 @@
     <AssociationSet Name="FK__Product__CatePro__1B0907CE" Association="Self.FK__Product__CatePro__1B0907CE">
       <End Role="CategoryProduct" EntitySet="CategoryProduct" />
       <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="fk_detail_bill" Association="Self.fk_detail_bill">
+      <End Role="Bill" EntitySet="Bill" />
+      <End Role="DetailBill" EntitySet="DetailBill" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetailBill_DetailBill" Association="Self.FK_DetailBill_DetailBill">
+      <End Role="DetailBill" EntitySet="DetailBill" />
+      <End Role="DetailBill1" EntitySet="DetailBill" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetailBill_DetailBill1" Association="Self.FK_DetailBill_DetailBill1">
+      <End Role="DetailBill" EntitySet="DetailBill" />
+      <End Role="DetailBill1" EntitySet="DetailBill" />
     </AssociationSet>
     <AssociationSet Name="fk_id_product" Association="Self.fk_id_product">
       <End Role="Product" EntitySet="Product" />

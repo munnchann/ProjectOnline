@@ -20,12 +20,12 @@ namespace ShopOnline.Models
             this.DetailBills = new HashSet<DetailBill>();
         }
     
-        public int BillID { get; set; }
+        public string BillID { get; set; }
         public int CusID { get; set; }
         public System.DateTime DateOrder { get; set; }
         public decimal TransportPrice { get; set; }
-        public decimal TotalPayment { get; set; }
-        public int EmployeeID { get; set; }
+        public Nullable<decimal> TotalPayment { get; set; }
+        public Nullable<int> EmployeeID { get; set; }
         public string Status { get; set; }
         public string TypeBill { get; set; }
         public string CreditCardID { get; set; }

@@ -25,7 +25,7 @@ namespace ShopOnline.Controllers
 
         public ActionResult AddCategoryProduct(CategoryProduct Model)
         {
-            RandomGenerator randomGenerator = new RandomGenerator();
+            RandomGenerator_Bill randomGenerator = new RandomGenerator_Bill();
             CategoryProduct cate = new CategoryProduct();
             cate.CateID = randomGenerator.Generate();
             cate.CateName = Model.CateName;
