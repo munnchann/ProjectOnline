@@ -198,7 +198,6 @@
 <script>
     function loadData() {
         $.ajax({
-            type: 'GET',
             url: '/Cart/CartBag',
             success: function (res) {
                 $('#CartCount').html(res);

@@ -215,7 +215,7 @@ namespace ShopOnline.Controllers
             currentCart = list.ToList();
             return View(list);
         }
-        [HttpGet]
+        
         public PartialViewResult CartBag()
         {
             int total = 0;
