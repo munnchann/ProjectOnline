@@ -56,7 +56,7 @@ namespace ShopOnline.Controllers
                     Quantity = 1
                 });
                 Session[CartSession] = cart;
-                Session["count"] = 1;
+                //Session["count"] = 1;
             }
             else
             {
@@ -68,8 +68,8 @@ namespace ShopOnline.Controllers
                 }
                 else
                 {
-                    cart.Add(new CartModel{product = db.Products.Find(productId),Quantity = 1});
-                    Session["count"] = Convert.ToInt32(Session["count"])+ 1;
+                    cart.Add(new CartModel { product = db.Products.Find(productId), Quantity = 1 });
+                    //Session["count"] = Convert.ToInt32(Session["count"]) + 1;
                 }
                 Session[CartSession] = cart;
             }
@@ -92,23 +92,23 @@ namespace ShopOnline.Controllers
             if (session != null)
                 currentCart = (List<CartModel>)session;
             foreach (var item in currentCart)
+            {
+                if (item.product.ProductID == id)
                 {
-                    if (item.product.ProductID == id)
+                    if (quantity == 0)
                     {
-                        if (quantity == 0)
-                        {
-                            currentCart.Remove(item);
-                        Session["count"] = Convert.ToInt32(Session["count"]) - 1;
+                        currentCart.Remove(item);
+                        //Session["count"] = Convert.ToInt32(Session["count"]) - 1;
                         break;
-                        }
-                        item.Quantity = quantity;
                     }
+                    item.Quantity = quantity;
                 }
+            }
 
             Session[CartSession] = currentCart;
             return Json(new { Message = "Thành công", JsonRequestBehavior.AllowGet });
         }
-        
+
         public ActionResult DeleteAll()
         {
             Session[CartSession] = new List<CartModel>();
@@ -116,28 +116,28 @@ namespace ShopOnline.Controllers
             {
                 status = true
             });
-            
+
         }
-        
-        public ActionResult DeleteItem(string id)
-        {
-            var cartSession = (List<CartModel>)Session[CartSession];
-            if (cartSession != null)
-            {
-                cartSession.RemoveAll(x => x.product.ProductID == id);
-                Session[CartSession] = cartSession;
-                Session["count"] = Convert.ToInt32(Session["count"]) - 1;
-                return RedirectToAction("Index", "Cart");
-            }
-            return RedirectToAction("Index", "Cart");
-        }
+
+        //public ActionResult DeleteItem(string id)
+        //{
+        //    var cartSession = (List<CartModel>)Session[CartSession];
+        //    if (cartSession != null)
+        //    {
+        //        cartSession.RemoveAll(x => x.product.ProductID == id);
+        //        Session[CartSession] = cartSession;
+        //        Session["count"] = Convert.ToInt32(Session["count"]) - 1;
+        //        return RedirectToAction("Index", "Cart");
+        //    }
+        //    return RedirectToAction("Index", "Cart");
+        //}
         public ActionResult Checkout()
         {
-            if(Session["id"]== null)
+            if (Session["id"] == null)
             {
                 return RedirectToAction("LoginUser", "Login");
             }
-            if(Session["address"].ToString() == "TPHCM")
+            if (Session["address"].ToString() == "TPHCM")
             {
                 ViewBag.Address = 1;
             }
@@ -161,6 +161,72 @@ namespace ShopOnline.Controllers
             }
             return View(currentCart);
 
+        }
+        public ActionResult Order_Tracking()
+        {
+            if (Session["id"] == null)
+            {
+                return RedirectToAction("LoginUser", "Login");
+            }
+
+            var currentCart = new List<Order>();
+            var session = Convert.ToInt32(Session["id"]);
+            var list = from a in db.Orders where a.Stt == "wait for confirmation" && a.CusID == session select a;
+            currentCart = list.ToList();
+            return View(list);
+
+        }
+        public ActionResult Order_Tracking1()
+        {
+            if (Session["id"] == null)
+            {
+                return RedirectToAction("LoginUser", "Login");
+            }
+
+            var currentCart = new List<Order>();
+            var session = Convert.ToInt32(Session["id"]);
+            var list = from a in db.Orders where a.Stt == "confirmed" && a.CusID == session select a;
+            currentCart = list.ToList();
+            return View(list);
+        }
+        public ActionResult Order_Tracking2()
+        {
+            if (Session["id"] == null)
+            {
+                return RedirectToAction("LoginUser", "Login");
+            }
+
+            var currentCart = new List<Order>();
+            var session = Convert.ToInt32(Session["id"]);
+            var list = from a in db.Orders where a.Stt == "being shipped" && a.CusID == session select a;
+            currentCart = list.ToList();
+            return View(list);
+        }
+        public ActionResult Order_Tracking3()
+        {
+            if (Session["id"] == null)
+            {
+                return RedirectToAction("LoginUser", "Login");
+            }
+
+            var currentCart = new List<Order>();
+            var session = Convert.ToInt32(Session["id"]);
+            var list = from a in db.Orders where a.Stt == "Accomplished" && a.CusID == session select a;
+            currentCart = list.ToList();
+            return View(list);
+        }
+        [HttpGet]
+        public PartialViewResult CartBag()
+        {
+            int total = 0;
+            var session = Session[CartSession];
+            var currentCart = new List<CartModel>();
+            if (session != null)
+                currentCart = (List<CartModel>)session;
+            var t1 = currentCart.Sum(s => s.Quantity);
+            total = currentCart.Count(x => x.Quantity <= t1);            
+            ViewBag.QuantityCart = total;
+            return PartialView("CartBag");
         }
     }
 }

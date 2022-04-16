@@ -81,38 +81,32 @@
                                 </div>
                                 <div class="border p-3 mb-3">
                                     <div class="col-md-4">
-                                        <select name="TransportName" onchange="this.form.submit()" asp-items="@ViewBag.Transport" class="form-control">
-                                            <option>-- Choose payment method --</option>
-                                            <option>-- COD --</option>
-                                            <option>-- PayPal --</option>
+                                        <select name="TransportName" asp-items="@ViewBag.Transport" class="form-control" id="trans">
+                                            <option value="">-- Choose payment method --</option>
+                                            <option value="COD">COD</option>
+                                            <option value="PayPal">PayPal</option>
                                         </select>
 
                                     </div>
                                 </div>
-                                <span>
-                                    @using (Html.BeginForm("Success", "Paypal", FormMethod.Post))
-                                    {
+                                <div class="hidden" id="pD">
                                     <span>
-                                        @if (@ViewBag.Transport == "PayPal")
-
+                                        @using (Html.BeginForm("GetDataPaypal", "Paypal", FormMethod.Post))
                                         {
                                             <button type="submit" class="btn btn-primary btn-lg py-3 btn-block">Place Order</button>
-
                                         }
                                     </span>
-                                    }
-                                </span>
-                              
-
+                                </div>
+                            </div>
                         </form>
 
-                        <div class="form-group">
-                            <span>
-                                @if (@ViewBag.Transport == "COD")
-                                {
-                                    <a class="btn btn-primary btn-lg py-3 btn-block" href="~/Paypal/Success1">Place Order</a>
-                                }
-                            </span>
+                        <div class="hidden" id="cc">
+                            @using (Html.BeginForm("Success1", "Paypal", FormMethod.Post))
+                            {
+
+                                <button type="submit" class="btn btn-primary btn-lg py-3 btn-block">Place Order</button>
+
+                            }
                         </div>
 
                     </div>
@@ -123,4 +117,29 @@
     </div>
     <!-- </form> -->
 </div>
-    </div>
+<script>
+    function hideOnload() {
+        $('#cc').hide();
+        $('#pD').hide();
+    }
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        hideOnload();
+        $('#trans').change(function () {
+            var ID = $(this).val();
+            if (ID == "PayPal") {
+                $('#cc').hide();
+                $('#pD').show();
+            } else if (ID == "COD") {
+                $('#pD').hide();
+                $('#cc').show();
+            } else {
+                hideOnload();
+            }
+            console.log(ID);
+        });
+    });
+
+
+</script>

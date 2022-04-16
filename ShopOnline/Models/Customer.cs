@@ -18,6 +18,7 @@ namespace ShopOnline.Models
         public Customer()
         {
             this.Bills = new HashSet<Bill>();
+            this.Orders = new HashSet<Order>();
             this.UserCarts = new HashSet<UserCart>();
         }
     
@@ -31,6 +32,8 @@ namespace ShopOnline.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Bill> Bills { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Order> Orders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserCart> UserCarts { get; set; }
     }

@@ -162,6 +162,7 @@
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\OrderManageController.cs" />
     <Compile Include="Controllers\PaypalController.cs" />
     <Compile Include="Controllers\PositionController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -186,19 +187,22 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Model1.Context.cs">
-      <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
       <DependentUpon>Model1.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Model1.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Model1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Order.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Position.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -216,6 +220,8 @@
     <Compile Include="Models\UserCart.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Pay\GetDataPaypal.cs" />
+    <Compile Include="Pay\Ord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -225,6 +231,7 @@
     <Content Include="asset\css\bootstrap\bootstrap-reboot.css" />
     <Content Include="asset\css\jquery-ui.css" />
     <Content Include="asset\css\magnific-popup.css" />
+    <Content Include="asset\css\MyStyle.css" />
     <Content Include="asset\css\owl.carousel.min.css" />
     <Content Include="asset\css\owl.theme.default.min.css" />
     <Content Include="asset\css\style.css" />
@@ -271,13 +278,10 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Content>
     <Content Include="Models\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.cs</LastGenOutput>
       <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -378,6 +382,9 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\cart.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -416,6 +423,13 @@
     <Content Include="Views\Product\AddProduct.cshtml" />
     <Content Include="Views\Paypal\Success.cshtml" />
     <Content Include="Views\Paypal\Success1.cshtml" />
+    <Content Include="Views\Paypal\GetDataPaypal.cshtml" />
+    <Content Include="Views\Cart\Order_Tracking.cshtml" />
+    <Content Include="Views\Cart\Order_Tracking1.cshtml" />
+    <Content Include="Views\Cart\Order_Tracking2.cshtml" />
+    <Content Include="Views\Cart\Order_Tracking3.cshtml" />
+    <Content Include="Views\OrderManage\Index.cshtml" />
+    <Content Include="Views\Cart\CartBag.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

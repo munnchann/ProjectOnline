@@ -1,4 +1,5 @@
 ﻿using ShopOnline.Models;
+using ShopOnline.Pay;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,93 +17,106 @@ namespace ShopOnline.Controllers
         {
             return View();
         }
+        public ActionResult GetDataPaypal()
+        {
+            var getData = new GetDataPaypal();
+            var order = getData.InformationOrder(getData.GetPayPalResponse(Request.QueryString["tx"]));
+            ViewBag.tx = Request.QueryString["tx"];
+            RandomGenerator_Bill generator = new RandomGenerator_Bill();
+            var listCart = (List<CartModel>)Session[CartSession];
+            Bill bill = new Bill();
+            bill.BillID = generator.Generate();
+            bill.CusID = int.Parse(Session["id"].ToString());
+            bill.DateOrder = DateTime.Now;
+            bill.TypeBill = "PayPal";
+            bill.Status = "Paid";
+            if (Session["address"].ToString() == "TPHCM")
+            {
+                bill.TransportPrice = 1;
+            }
+            if (Session["address"].ToString() == "Thành phố Hồ Chí Minh")
+            {
+                bill.TransportPrice = 1;
+            }
+            if (Session["address"].ToString() == "Hà Nội")
+            {
+                bill.TransportPrice = 2;
+            }
+            if (Session["address"].ToString() == "HN")
+            {
+                bill.TransportPrice = 2;
+            }
+            db.Bills.Add(bill);
+            db.SaveChanges();
+            string IDOrder = bill.BillID;
+
+            List<DetailBill> lsdetail = new List<DetailBill>();
+            List<Models.Order> lsord = new List<Order>();
+            foreach (var item in listCart)
+            {
+                DetailBill dt = new DetailBill();
+                dt.BillID = IDOrder;
+                dt.Amount = item.Quantity;
+                dt.Price = item.product.Price;
+                dt.ProductID = item.product.ProductID;
+                dt.TotalPrice = (item.product.Price * item.Quantity);
+                lsdetail.Add(dt);
+            }
+            db.DetailBills.AddRange(lsdetail);
+            db.SaveChanges();
+            foreach (var item in listCart)
+            {
+                Models.Order ord = new Models.Order();
+                ord.OrderID = bill.BillID + item.product.ProductID;
+                ord.BillID = IDOrder;
+                ord.CusID = int.Parse(Session["id"].ToString());
+                ord.DateOrder = bill.DateOrder;
+                ord.Stt = "wait for confirmation";
+                lsord.Add(ord);
+            }
+
+            db.Orders.AddRange(lsord);
+            db.SaveChanges();
+            Session[CartSession] = null;
+            Session["count"] = null;
+
+            return View();
+        }
         [HttpGet]
         public ActionResult Success()
         {
             return View();
         }
         [HttpPost]
-        public ActionResult Success(string email)
+        public ActionResult Success(Product product)
         {
-                RandomGenerator_Bill generator = new RandomGenerator_Bill();
-                var listCart = (List<CartModel>)Session[CartSession];
-                Product pro = new Product();
-                Bill bill = new Bill();
-                bill.BillID = generator.Generate() + pro.ProductID;
-                bill.CusID = int.Parse(Session["id"].ToString());
-                bill.DateOrder = DateTime.Now;
-                if(ViewBag.Transport == "PayPal")
-                {
-                    bill.TypeBill = "PayPal";
-                }
-                else
-                {
-                    bill.TypeBill = "COD";
-                }
-                if(ViewBag.Transport == "PalPal")
-                {
-                    bill.Status = "Paid";
-                }
-                else
-                {
-                    bill.Status = "Unpaid";
-                }
-                bill.TransportPrice = ViewBag.Address;
-                string IDOrder = bill.BillID;
-                
-                List<DetailBill> lsdetail = new List<DetailBill>();
-                foreach(var item in listCart)
-                {
-                    DetailBill dt = new DetailBill();
-                    dt.BillID = IDOrder;
-                    dt.Amount = item.Quantity;
-                    dt.Price = item.product.Price;
-                    dt.ProductID = item.product.ProductID;
-                    dt.TotalPrice = ((item.product.Price * item.Quantity) + Convert.ToDecimal( ViewBag.Address));
 
-                    lsdetail.Add(dt);
-               
-                }
-                db.DetailBills.AddRange(lsdetail);
-                db.SaveChanges();
-                Session[CartSession] = null;
-                Session["count"] = null;
-            
-            return View();
-        }
-
-        [HttpGet]
-        public ActionResult Success1()
-        {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult Success1(string email)
-        {
             RandomGenerator_Bill generator = new RandomGenerator_Bill();
             var listCart = (List<CartModel>)Session[CartSession];
-            Product pro = new Product();
             Bill bill = new Bill();
-            bill.BillID = generator.Generate() + pro.ProductID;
+            bill.BillID = generator.Generate();
             bill.CusID = int.Parse(Session["id"].ToString());
-            bill.DateOrder = DateTime.Now;
-            if (ViewBag.Transport == "PayPal")
+            bill.DateOrder = DateTime.Now;          
+            bill.TypeBill = "COD";
+            bill.Status = "Unpaid";
+            if (Session["address"].ToString() == "TPHCM")
             {
-                bill.TypeBill = "PayPal";
+                bill.TransportPrice = 1;
             }
-            else
+            if (Session["address"].ToString() == "Thành phố Hồ Chí Minh")
             {
-                bill.TypeBill = "COD";
+                bill.TransportPrice = 1;
             }
-            if (ViewBag.Transport == "PalPal")
+            if (Session["address"].ToString() == "Hà Nội")
             {
-                bill.Status = "Paid";
+                bill.TransportPrice = 2;
             }
-            else
+            if (Session["address"].ToString() == "HN")
             {
-                bill.Status = "Unpaid";
+                bill.TransportPrice = 2;
             }
-            bill.TransportPrice = ViewBag.Address;
+            db.Bills.Add(bill);
+            db.SaveChanges();
             string IDOrder = bill.BillID;
 
             List<DetailBill> lsdetail = new List<DetailBill>();
@@ -113,12 +127,79 @@ namespace ShopOnline.Controllers
                 dt.Amount = item.Quantity;
                 dt.Price = item.product.Price;
                 dt.ProductID = item.product.ProductID;
-                dt.TotalPrice = ((item.product.Price * item.Quantity) + Convert.ToDecimal(ViewBag.Address));
-
+                dt.TotalPrice = (item.product.Price * item.Quantity);
                 lsdetail.Add(dt);
-
             }
             db.DetailBills.AddRange(lsdetail);
+            db.SaveChanges();
+            Session[CartSession] = null;
+            Session["count"] = null;
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult Success1()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Success1(Product product)
+        {
+            RandomGenerator_Bill generator = new RandomGenerator_Bill();
+            var listCart = (List<CartModel>)Session[CartSession];        
+            Bill bill = new Bill();
+            bill.BillID = generator.Generate();
+            bill.CusID = int.Parse(Session["id"].ToString());
+            bill.DateOrder = DateTime.Now;
+            bill.TypeBill = "COD";
+            bill.Status = "Unpaid";
+            if (Session["address"].ToString() == "TPHCM")
+            {
+                bill.TransportPrice = 1;
+            }
+            if (Session["address"].ToString() == "Thành phố Hồ Chí Minh")
+            {
+                bill.TransportPrice = 1;
+            }
+            if (Session["address"].ToString() == "Hà Nội")
+            {
+                bill.TransportPrice = 2;
+            }
+            if (Session["address"].ToString() == "HN")
+            {
+                bill.TransportPrice = 2;
+            }
+            db.Bills.Add(bill);
+            db.SaveChanges();
+            string IDOrder = bill.BillID;
+
+            List<DetailBill> lsdetail = new List<DetailBill>();
+            List<Models.Order> lsord = new List<Order>();
+            foreach (var item in listCart)
+            {
+                DetailBill dt = new DetailBill();
+                dt.BillID = IDOrder;
+                dt.Amount = item.Quantity;
+                dt.Price = item.product.Price;
+                dt.ProductID = item.product.ProductID;
+                dt.TotalPrice = (item.product.Price * item.Quantity);
+                lsdetail.Add(dt);      
+            }
+            db.DetailBills.AddRange(lsdetail);
+            db.SaveChanges();
+            foreach(var item in listCart)
+            {
+                Models.Order ord = new Models.Order();
+                ord.OrderID =  bill.BillID + item.product.ProductID;
+                ord.BillID = IDOrder;
+                ord.CusID = int.Parse(Session["id"].ToString());
+                ord.DateOrder = bill.DateOrder;
+                ord.Stt = "wait for confirmation";
+                lsord.Add(ord);
+                
+            }
+            //List<Models.Order> uniqueLst = lsord.Distinct().ToList();
+            db.Orders.AddRange(lsord);
             db.SaveChanges();
             Session[CartSession] = null;
             Session["count"] = null;

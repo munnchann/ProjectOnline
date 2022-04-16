@@ -196,6 +196,20 @@
     </div>
 </div>
 <script>
+    function loadData() {
+        $.ajax({
+            type: 'GET',
+            url: '/Cart/CartBag',
+            success: function (res) {
+                $('#CartCount').html(res);
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        });
+    }
+</script>
+<script>
 $(document).ready(function () {
     $(".btn-add-cart").click(function () {
             $.ajax({
@@ -203,15 +217,16 @@ $(document).ready(function () {
                 data: {
                     productId: $(this).data("id"),
                 },
-                success: function (data) {
+                success: function (res) {
                     Swal.fire({
                         icon: 'success',
                         title: 'Thêm giỏ hàng thành công',
                         showConfirmButton: false,
                         timer: 2500
                     });
-                    $('#CartCount').html(@Session["count"] + 1);
-                   /* window.location.href = "/Product";*/
+                    @*$('#CartCount').html(@Session["count"] + 1);*@
+                    /* $('#CartCount').text(res);*/
+                    loadData();
                 },
                 error: function () {
                     Swal.fire({

@@ -7,9 +7,9 @@
     <Property Name="BillID" Type="varchar" MaxLength="16" Nullable="false" />
     <Property Name="CusID" Type="int" Nullable="false" />
     <Property Name="DateOrder" Type="date" Nullable="false" />
-    <Property Name="TransportPrice" Type="decimal" Precision="18" Scale="3" Nullable="false" />
+    <Property Name="TransportPrice" Type="decimal" Precision="18" Scale="3" />
     <Property Name="TotalPayment" Type="decimal" Precision="18" Scale="0" />
-    <Property Name="EmployeeID" Type="int" />
+    <Property Name="ShippingName" Type="varchar" MaxLength="50" />
     <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="TypeBill" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="CreditCardID" Type="varchar" MaxLength="50" />
@@ -57,6 +57,16 @@
     <Property Name="Image" Type="varchar" MaxLength="200" Nullable="false" />
     <Property Name="Phone" Type="varchar" MaxLength="11" Nullable="false" />
     <Property Name="PositionID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="varchar" MaxLength="16" Nullable="false" />
+    <Property Name="CusID" Type="int" />
+    <Property Name="BillID" Type="varchar" MaxLength="16" Nullable="false" />
+    <Property Name="Stt" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DateOrder" Type="date" Nullable="false" />
   </EntityType>
   <EntityType Name="Position">
     <Key>
@@ -132,6 +142,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__Orders__BillID__619B8048">
+    <End Role="Bill" Type="Self.Bill" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bill">
+        <PropertyRef Name="BillID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="BillID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__CusID__60A75C0F">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CusID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="CusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__Product__CatePro__1B0907CE">
     <End Role="CategoryProduct" Type="Self.CategoryProduct" Multiplicity="1" />
     <End Role="Product" Type="Self.Product" Multiplicity="*" />
@@ -144,7 +178,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="fk_detail_bill">
+  <Association Name="FK_DetailBill_Bill">
     <End Role="Bill" Type="Self.Bill" Multiplicity="1" />
     <End Role="DetailBill" Type="Self.DetailBill" Multiplicity="*" />
     <ReferentialConstraint>
@@ -153,30 +187,6 @@
       </Principal>
       <Dependent Role="DetailBill">
         <PropertyRef Name="BillID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_DetailBill_DetailBill">
-    <End Role="DetailBill" Type="Self.DetailBill" Multiplicity="1" />
-    <End Role="DetailBill1" Type="Self.DetailBill" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="DetailBill">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="DetailBill1">
-        <PropertyRef Name="ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_DetailBill_DetailBill1">
-    <End Role="DetailBill" Type="Self.DetailBill" Multiplicity="1" />
-    <End Role="DetailBill1" Type="Self.DetailBill" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="DetailBill">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="DetailBill1">
-        <PropertyRef Name="ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -210,6 +220,7 @@
     <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DetailBill" EntityType="Self.DetailBill" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Position" EntityType="Self.Position" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
@@ -226,21 +237,21 @@
       <End Role="Position" EntitySet="Position" />
       <End Role="Employee" EntitySet="Employee" />
     </AssociationSet>
+    <AssociationSet Name="FK__Orders__BillID__619B8048" Association="Self.FK__Orders__BillID__619B8048">
+      <End Role="Bill" EntitySet="Bill" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__CusID__60A75C0F" Association="Self.FK__Orders__CusID__60A75C0F">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
     <AssociationSet Name="FK__Product__CatePro__1B0907CE" Association="Self.FK__Product__CatePro__1B0907CE">
       <End Role="CategoryProduct" EntitySet="CategoryProduct" />
       <End Role="Product" EntitySet="Product" />
     </AssociationSet>
-    <AssociationSet Name="fk_detail_bill" Association="Self.fk_detail_bill">
+    <AssociationSet Name="FK_DetailBill_Bill" Association="Self.FK_DetailBill_Bill">
       <End Role="Bill" EntitySet="Bill" />
       <End Role="DetailBill" EntitySet="DetailBill" />
-    </AssociationSet>
-    <AssociationSet Name="FK_DetailBill_DetailBill" Association="Self.FK_DetailBill_DetailBill">
-      <End Role="DetailBill" EntitySet="DetailBill" />
-      <End Role="DetailBill1" EntitySet="DetailBill" />
-    </AssociationSet>
-    <AssociationSet Name="FK_DetailBill_DetailBill1" Association="Self.FK_DetailBill_DetailBill1">
-      <End Role="DetailBill" EntitySet="DetailBill" />
-      <End Role="DetailBill1" EntitySet="DetailBill" />
     </AssociationSet>
     <AssociationSet Name="fk_id_product" Association="Self.fk_id_product">
       <End Role="Product" EntitySet="Product" />

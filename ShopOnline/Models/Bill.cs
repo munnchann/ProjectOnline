@@ -17,20 +17,23 @@ namespace ShopOnline.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Bill()
         {
+            this.Orders = new HashSet<Order>();
             this.DetailBills = new HashSet<DetailBill>();
         }
     
         public string BillID { get; set; }
         public int CusID { get; set; }
         public System.DateTime DateOrder { get; set; }
-        public decimal TransportPrice { get; set; }
+        public Nullable<decimal> TransportPrice { get; set; }
         public Nullable<decimal> TotalPayment { get; set; }
-        public Nullable<int> EmployeeID { get; set; }
+        public string ShippingName { get; set; }
         public string Status { get; set; }
         public string TypeBill { get; set; }
         public string CreditCardID { get; set; }
     
         public virtual Customer Customer { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Order> Orders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetailBill> DetailBills { get; set; }
     }

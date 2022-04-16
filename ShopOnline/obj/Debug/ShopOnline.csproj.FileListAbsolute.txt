@@ -346,3 +346,4 @@ C:\C#\GitHub\ShopOnline\obj\Debug\ShopOnline.csproj.CoreCompileInputs.cache
 C:\C#\GitHub\ShopOnline\obj\Debug\ShopOnline.csproj.CopyComplete
 C:\C#\GitHub\ShopOnline\obj\Debug\ShopOnline.dll
 C:\C#\GitHub\ShopOnline\obj\Debug\ShopOnline.pdb
+C:\C#\GitHub\ShopOnline\obj\Debug\ShopOnline.csproj.AssemblyReference.cache

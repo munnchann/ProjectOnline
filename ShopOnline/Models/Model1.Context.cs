@@ -30,6 +30,7 @@ namespace ShopOnline.Models
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<DetailBill> DetailBills { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Position> Positions { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }

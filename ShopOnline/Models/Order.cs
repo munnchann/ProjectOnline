@@ -12,16 +12,15 @@ namespace ShopOnline.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class DetailBill
+    public partial class Order
     {
-        public int ID { get; set; }
-        public string ProductID { get; set; }
+        public string OrderID { get; set; }
+        public Nullable<int> CusID { get; set; }
         public string BillID { get; set; }
-        public int Amount { get; set; }
-        public decimal Price { get; set; }
-        public decimal TotalPrice { get; set; }
+        public string Stt { get; set; }
+        public System.DateTime DateOrder { get; set; }
     
         public virtual Bill Bill { get; set; }
-        public virtual Product Product { get; set; }
+        public virtual Customer Customer { get; set; }
     }
 }

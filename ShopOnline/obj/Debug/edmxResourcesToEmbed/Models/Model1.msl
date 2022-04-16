@@ -9,7 +9,7 @@
           <ScalarProperty Name="DateOrder" ColumnName="DateOrder" />
           <ScalarProperty Name="TransportPrice" ColumnName="TransportPrice" />
           <ScalarProperty Name="TotalPayment" ColumnName="TotalPayment" />
-          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="ShippingName" ColumnName="ShippingName" />
           <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="TypeBill" ColumnName="TypeBill" />
           <ScalarProperty Name="CreditCardID" ColumnName="CreditCardID" />
@@ -61,6 +61,17 @@
           <ScalarProperty Name="Image" ColumnName="Image" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="PositionID" ColumnName="PositionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="ShoppingModel.Order">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="CusID" ColumnName="CusID" />
+          <ScalarProperty Name="BillID" ColumnName="BillID" />
+          <ScalarProperty Name="Stt" ColumnName="Stt" />
+          <ScalarProperty Name="DateOrder" ColumnName="DateOrder" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

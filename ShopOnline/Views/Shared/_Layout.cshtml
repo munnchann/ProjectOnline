@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="~/asset/css/owl.carousel.min.css">
     <link rel="stylesheet" href="~/asset/css/owl.theme.default.min.css">
 
-
+   
     <link rel="stylesheet" href="~/asset/css/aos.css">
 
     <link rel="stylesheet" href="~/asset/css/style.css">
@@ -64,10 +64,11 @@
                                     <li>
                                         <a href="@Url.Action("Index","Cart")" class="site-cart">
                                             <span class="icon icon-shopping_cart">
-                                                <span  class="count" id="CartCount">@Session["count"]</span>
+                                                <span class="count" id="CartCount">@Html.Action("CartBag","Cart")</span>
                                             </span>
                                         </a>
                                     </li>
+                                    <li><a href="/Cart/Order_Tracking"><span class="icon icon-truck"></span></a></li>
                                     <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
                                 </ul>
                             </div>
