@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "EditStaff";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="card">
+    <div class="card-header card-header-primary">
+        <h4 class="card-title">Admin Edit</h4>
+        <p class="card-category"></p>
+    </div>
+    <div class="card-body">
+       @* @{ var item = ViewData["Editviewad"] as CDstore.Models.Admin;*@
+            <form action="@Url.Action("_EditAd")" method="post" class="form">
+
+                <div class="row">
+                    <input id="id_ad_e" name="id_ad_e" value="" type="hidden" class="form-control">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="bmd-label-floating">Full Name</label>
+                            <input id="Name_ad_e" name="Name_ad_e" value="" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label class="bmd-label-floating">Email address</label>
+                            <input id="Email_ad_e" name="Email_ad_e" value="" type="email" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label class="bmd-label-floating">Phone</label>
+                            <input id="Phone_ad_e" name="Phone_ad_e" value="" type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="bmd-label-floating">Address</label>
+                            <input id="Address_ad_e" name="Address_ad_e" value="" type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="bmd-label-floating">Username</label>
+                            <input id="Username_ad_e" name="Username_ad_e" value="" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="bmd-label-floating">Password</label>
+                            <input id="Pass_ad_e" name="Pass_ad_e" value="" type="text" class="form-control">
+                        </div>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="btn btn-primary pull-right">Update</button>
+                <div class="clearfix"></div>
+            </form>
+
+    </div>
+</div>
+

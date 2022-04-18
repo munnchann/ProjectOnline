@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+
+</head>
+<body>
+    <div class="sidebar" data-color="purple" data-background-color="black" data-image="../assets/img/sidebar-2.jpg">
+        <!--
+            Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+            Tip 2: you can also add an image using data-image tag
+        -->
+        <div class="logo">
+            <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+                CD Store Management
+            </a>
+        </div>
+        <div class="sidebar-wrapper">
+            <ul class="nav">
+                <li class="nav-item  ">
+                    <a class="nav-link" href="./dashboard.html">
+                        <i class="material-icons">dashboard</i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="@Url.Action("ViewCus","Customer")">
+                        <i class="material-icons">person</i>
+                        <p>Customer</p>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="@Url.Action("ViewPro","Product")">
+
+                        <i class="material-icons">content_paste</i>
+                        <p>Product</p>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="@Url.Action("ViewOrd","Order")">
+                        <i class="material-icons">library_books</i>
+                        <p>Order</p>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="@Url.Action("ViewStaff","Staff")">
+                        <i class="material-icons">bubble_chart</i>
+                        <p>Staff</p>
+                    </a>
+                </li>
+
+                <!-- <li class="nav-item active-pro ">
+                      <a class="nav-link" href="./upgrade.html">
+                          <i class="material-icons">unarchive</i>
+                          <p>Upgrade to PRO</p>
+                      </a>
+                  </li> -->
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
