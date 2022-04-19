@@ -69,9 +69,11 @@ namespace ShopOnline.Controllers
             fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
             model.Image = fileName;
             fileName = Path.Combine(Server.MapPath("~/Content/Images/"), fileName);
+            model.UploadImage.SaveAs(fileName);
             pro.Image = model.Image;
             db.Products.Add(pro);
             db.SaveChanges();
+            
             return View(pro);
         }
     }

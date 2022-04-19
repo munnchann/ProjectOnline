@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
+using PagedList;
 using ShopOnline.Models;
 using System;
 using System.Collections.Generic;
@@ -33,7 +34,6 @@ namespace ShopOnline.Controllers
             }
             return View(currentCart);
         }
-        [HttpGet]
         public ActionResult GetListItems()
         {
             var session = Session[CartSession];
@@ -49,6 +49,7 @@ namespace ShopOnline.Controllers
             var session = Session[CartSession];
             if (session == null)
             {
+
                 List<CartModel> cart = new List<CartModel>();
                 cart.Add(new CartModel
                 {
@@ -162,7 +163,7 @@ namespace ShopOnline.Controllers
             return View(currentCart);
 
         }
-        public ActionResult Order_Tracking()
+        public ActionResult Order_Tracking(int? page)
         {
             if (Session["id"] == null)
             {
@@ -171,12 +172,15 @@ namespace ShopOnline.Controllers
 
             var currentCart = new List<Order>();
             var session = Convert.ToInt32(Session["id"]);
-            var list = from a in db.Orders where a.Stt == "wait for confirmation" && a.CusID == session select a;
+            List<Order> list = (from a in db.Orders where a.Stt == "wait for confirmation" && a.CusID == session select a).ToList();
             currentCart = list.ToList();
-            return View(list);
+            int pageSize = 4;
+            int pageNumber = (page ?? 1);
+            list = list.OrderByDescending(n => n.OrderID).ToList();
+            return View(list.ToPagedList(pageNumber, pageSize));
 
         }
-        public ActionResult Order_Tracking1()
+        public ActionResult Order_Tracking1(int? page)
         {
             if (Session["id"] == null)
             {
@@ -185,11 +189,14 @@ namespace ShopOnline.Controllers
 
             var currentCart = new List<Order>();
             var session = Convert.ToInt32(Session["id"]);
-            var list = from a in db.Orders where a.Stt == "confirmed" && a.CusID == session select a;
+            List<Order> list = (from a in db.Orders where a.Stt == "confirmed" && a.CusID == session select a).ToList();
             currentCart = list.ToList();
-            return View(list);
+            int pageSize = 4;
+            int pageNumber = (page ?? 1);
+            list = list.OrderByDescending(n => n.OrderID).ToList();
+            return View(list.ToPagedList(pageNumber, pageSize));
         }
-        public ActionResult Order_Tracking2()
+        public ActionResult Order_Tracking2(int? page)
         {
             if (Session["id"] == null)
             {
@@ -198,11 +205,14 @@ namespace ShopOnline.Controllers
 
             var currentCart = new List<Order>();
             var session = Convert.ToInt32(Session["id"]);
-            var list = from a in db.Orders where a.Stt == "being shipped" && a.CusID == session select a;
+            List<Order> list = (from a in db.Orders where a.Stt == "being shipped" && a.CusID == session select a).ToList();
             currentCart = list.ToList();
-            return View(list);
+            int pageSize = 4;
+            int pageNumber = (page ?? 1);
+            list = list.OrderByDescending(n => n.OrderID).ToList();
+            return View(list.ToPagedList(pageNumber, pageSize));
         }
-        public ActionResult Order_Tracking3()
+        public ActionResult Order_Tracking3(int? page)
         {
             if (Session["id"] == null)
             {
@@ -211,9 +221,12 @@ namespace ShopOnline.Controllers
 
             var currentCart = new List<Order>();
             var session = Convert.ToInt32(Session["id"]);
-            var list = from a in db.Orders where a.Stt == "Accomplished" && a.CusID == session select a;
+            List<Order> list = (from a in db.Orders where a.Stt == "Accomplished" && a.CusID == session select a).ToList();
             currentCart = list.ToList();
-            return View(list);
+            int pageSize = 4;
+            int pageNumber = (page ?? 1);
+            list = list.OrderByDescending(n => n.OrderID).ToList();
+            return View(list.ToPagedList(pageNumber, pageSize));
         }
         
         public PartialViewResult CartBag()

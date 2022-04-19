@@ -23,13 +23,17 @@ namespace ShopOnline.Controllers
             var order = getData.InformationOrder(getData.GetPayPalResponse(Request.QueryString["tx"]));
             ViewBag.tx = Request.QueryString["tx"];
             RandomGenerator_Bill generator = new RandomGenerator_Bill();
+            //get product cart first 
             var listCart = (List<CartModel>)Session[CartSession];
+            var q = listCart.FirstOrDefault();
             Bill bill = new Bill();
             bill.BillID = generator.Generate();
             bill.CusID = int.Parse(Session["id"].ToString());
             bill.DateOrder = DateTime.Now;
             bill.TypeBill = "PayPal";
             bill.Status = "Paid";
+            
+            //bill.ShippingName = ViewBag.NVC;
             if (Session["address"].ToString() == "TPHCM")
             {
                 bill.TransportPrice = 1;
@@ -64,17 +68,10 @@ namespace ShopOnline.Controllers
             }
             db.DetailBills.AddRange(lsdetail);
             db.SaveChanges();
-            foreach (var item in listCart)
-            {
-                Models.Order ord = new Models.Order();
-                ord.OrderID = bill.BillID + item.product.ProductID;
-                ord.BillID = IDOrder;
-                ord.CusID = int.Parse(Session["id"].ToString());
-                ord.DateOrder = bill.DateOrder;
-                ord.Stt = "wait for confirmation";
-                lsord.Add(ord);
-            }
 
+            string proid = q.product.ProductID;
+            Order or = new Order();
+            or.OrderID = bill.BillID + proid;
             db.Orders.AddRange(lsord);
             db.SaveChanges();
             Session[CartSession] = null;

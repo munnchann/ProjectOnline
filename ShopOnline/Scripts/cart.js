@@ -1,7 +1,8 @@
 ﻿var CartController = function () {
     this.initialize = function () {
-     
+
         registerEvents();
+       /* loadData();*/
     }
 
     function registerEvents() {
@@ -10,6 +11,8 @@
             const id = $(this).data('id');
             const quantity = parseInt($('#txt_quantity_' + id).val()) + 1;
             updateCart(id, quantity);
+            //
+
         });
 
         $('.btn-minus').off('click').on('click', function (e) {
@@ -34,15 +37,28 @@
                 quantity: quantity
             },
             success: function (res) {
-                $('#CartCount').text(res.lentgh);
-                window.location.href = "/Cart";
+                /* $('#CartCount').text(res.length);*/
+                //window.location.href = "/Cart";
+                //loadData();
+
             },
             error: function (err) {
                 console.log(err);
             }
         });
     }
-
+    //function loadData() {
+    //    $.ajax({
+    //        type: 'POST',
+    //        url: 'Cart/Index',
+    //        success: function (res) {
+    //            $('#a').html(res);
+    //        },
+    //        error: function (err) {
+    //            console.log(err);
+    //        }
+    //    });
+    //}
     //function loadData() {
     //    $.ajax({
     //        type: "GET",

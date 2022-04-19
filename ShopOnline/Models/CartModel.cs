@@ -9,6 +9,7 @@ namespace ShopOnline.Models
     {
         public Product product { get; set; }
         public int Quantity { get; set; }
-        List<CartModel> items = new List<CartModel>();
+        //List<CartModel> items = new List<CartModel>();
+        public string TransportName { get; set; }
     }
 }
