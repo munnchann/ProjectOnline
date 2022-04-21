@@ -94,6 +94,7 @@ namespace ShopOnline.Controllers
                 currentCart = (List<CartModel>)session;
             foreach (var item in currentCart)
             {
+                
                 if (item.product.ProductID == id)
                 {
                     if (quantity == 0)
@@ -103,11 +104,13 @@ namespace ShopOnline.Controllers
                         break;
                     }
                     item.Quantity = quantity;
+                  
+                    //total = (item.Quantity * item.product.Price);
                 }
             }
 
             Session[CartSession] = currentCart;
-            return Json(new { Message = "Thành công", JsonRequestBehavior.AllowGet });
+            return RedirectToAction("Index", "Cart");
         }
 
         public ActionResult DeleteAll()
@@ -154,6 +157,8 @@ namespace ShopOnline.Controllers
             {
                 ViewBag.Address = 2;
             }
+            IEnumerable<NVC> lst = NVC.GetNhaVanChuyen();
+            ViewBag.listNVC = lst;
             var session = Session[CartSession];
             List<CartModel> currentCart = new List<CartModel>();
             if (session != null)
@@ -241,5 +246,6 @@ namespace ShopOnline.Controllers
             ViewBag.QuantityCart = total;
             return PartialView("CartBag");
         }
+       
     }
 }
