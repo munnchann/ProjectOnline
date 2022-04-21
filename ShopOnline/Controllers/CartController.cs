@@ -14,7 +14,7 @@ namespace ShopOnline.Controllers
     {
         Models.ShoppingEntities db = new Models.ShoppingEntities();
         private const string CartSession = "CartSession";
-        // GET: Cart
+        // GET: Cart    
         [HttpGet]
         public ActionResult Index()
         {

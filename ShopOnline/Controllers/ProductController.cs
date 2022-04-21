@@ -6,10 +6,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace ShopOnline.Controllers
 {
     public class ProductController : Controller
     {
+
         Models.ShoppingEntities db = new Models.ShoppingEntities();
         // GET: Product
 
@@ -77,4 +79,5 @@ namespace ShopOnline.Controllers
             return View(pro);
         }
     }
+
 }
