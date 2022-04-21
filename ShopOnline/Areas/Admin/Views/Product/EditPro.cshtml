@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "EditPro";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="card">
+    <div class="card-header card-header-primary">
+        <h4 class="card-title">Product Edit</h4>
+        <p class="card-category"></p>
+    </div>
+    <div class="card-body">
+       @* @{ var item = ViewData["Editviewpro"] as CDstore.Models.ModelView.ProductView;*@
+            <form action="" method="post" class="form">
+                <div class="row">
+                    <input id="id_product_e" name="id_product_e" value="" type="hidden" class="form-control">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label class="bmd-label-floating">Name</label>
+                            <input id="Name_product_e" name="Name_product_e" value="" type="text" class="form-control">
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="bmd-label-floating">Price</label>
+                            <input id="Price_product_e" name="Price_product_e" value="" type="text" class="form-control">
+
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="bmd-label-floating">Type Product</label>
+                            <input id="Type_product_e" name="Type_product_e" value="" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="bmd-label-floating">Status</label>
+                            <input id="Sta_product_e" name="Sta_product_e" value="" type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+
+                            <div class="form-group">
+                                <label class="bmd-label-floating"> Description</label>
+                                <input id="Des_product_e" name="Des_product_e" value="" class="form-control" rows="5"></input>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary pull-right">Update</button>
+                <div class="clearfix"></div>
+            </form>
+
+    </div>
+</div>
+
+
+

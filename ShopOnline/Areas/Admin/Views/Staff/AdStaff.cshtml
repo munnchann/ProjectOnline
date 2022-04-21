@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "AdStaff";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="card">
+    <div class="card-header card-header-primary">
+        <h4 class="card-title">Admin</h4>
+        <p class="card-category">Complete your Admin</p>
+    </div>
+    <div class="card-body">
+        <form action="@Url.Action("Addad")" method="post" class="form">
+            <div class="row">
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="bmd-label-floating">Full Name</label>
+                        <input id="Name_ad" name="Name_ad" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label class="bmd-label-floating">Email address</label>
+                        <input id="Email_ad" name="Email_ad" type="email" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label class="bmd-label-floating">Phone</label>
+                        <input id="Phone_ad" name="Phone_ad" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="bmd-label-floating">Address</label>
+                        <input id="Address_ad" name="Address_ad" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="bmd-label-floating">Username</label>
+                        <input id="Username_ad" name="Username_ad" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label class="bmd-label-floating">Password</label>
+                        <input id="Pass_ad" name="Pass_ad" type="text" class="form-control">
+                    </div>
+                </div>
+
+            </div>
+
+            <button type="submit" class="btn btn-primary pull-right">Save</button>
+            <div class="clearfix"></div>
+        </form>
+    </div>
+</div>
+

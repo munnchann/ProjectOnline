@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "DeleteCate";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="card">
+    <div class="card-header card-header-primary">
+        <h4 class="card-title">Category</h4>
+
+    </div>
+    <div class="card-body">
+        @*@{ var item = ViewData["DeleteCate"] as CDstore.Models.Category;*@
+            <form action="@Url.Action("_DeleteCate")" method="post" class="form">
+
+                <div class="row">
+                    <input id="id_cate" name="id_cate" value="" type="hidden" class="form-control">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="bmd-label-floating"> Name Category</label>
+                            <input id="Name_cate" name="Name_cate" value="" type="text" class="form-control">
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <button type="submit" class="btn btn-primary pull-right">Delete</button>
+                <div class="clearfix"></div>
+            </form>
+    </div>
+</div>
+

@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "DeleteCus";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="card">
+    <div class="card-header card-header-primary">
+        <h4 class="card-title">Customer Delete</h4>
+        <p class="card-category"></p>
+    </div>
+    <div class="card-body">
+        @{ var item = ViewData["Deleteviewcus"] as ShopOnline.Models.Customer;
+            <form action="@Url.Action("_DeleteCus")" method="post" class="form">
+
+                <div class="row">
+                    <input id="id_cus_e" name="id_cus_e" value="@item.CusID" type="hidden" class="form-control">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="bmd-label-floating">Full Name</label>
+                            <input id="Name_cus_e" name="Name_cus_e" value="@item.CusName" type="text" class="form-control">
+                        </div>
+                    </div>
+                    @*<div class="col-md-5">
+                        <div class="form-group">
+                            <label class="bmd-label-floating">Email address</label>
+                            <input id="Email_cus_e" name="Email_cus_e" value="@item." type="email" class="form-control">
+                        </div>
+                    </div>*@
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label class="bmd-label-floating">Phone</label>
+                            <input id="Phone_cus_e" name="Phone_cus_e" value="@item.Phone" type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="bmd-label-floating">Address</label>
+                            <input id="Address_cus_e" name="Address_cus_e" value="@item.Address" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="bmd-label-floating">Password</label>
+                            <input id="Pass_cus_e" name="Pass_cus_e" value="@item.Password" type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+
+                <button type="submit" class="btn btn-primary pull-right">Delete</button>
+                <div class="clearfix"></div>
+            </form>}
+
+    </div>
+</div>
+

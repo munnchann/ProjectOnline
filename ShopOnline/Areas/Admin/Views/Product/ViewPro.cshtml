@@ -1,0 +1,126 @@
+﻿@*@using PagedList.Mvc*@
+@{
+    ViewBag.Title = "Viewproduct";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<div class="col-md-12">
+    @*@{var view = ViewData["ViewPro"] as PagedList.IPagedList<ShopOnline.Models.ProductViewModel>;*@
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title ">Product Table</h4>
+                <a class="btn btn-white  btn-sm" href="@Url.Action("Pro","Product")">Add Product</a>
+                <a class="btn btn-white  btn-sm" href="@Url.Action("ViewCategory","Category")">Add Category</a>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class=" text-primary">
+                        <th>
+                            ID
+                        </th>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Price
+                        </th>
+                        <th>
+                            Type
+                        </th>
+                        <th>
+                            Desciption
+                        </th>
+                        <th>
+                            Status
+                        </th>
+                        <th>
+                        </th>
+                        </thead>
+                        <tbody>
+
+
+
+                            @*@foreach (var item in view)*@
+                            
+                                <tr>
+                                    <td>
+                                        @*@item.ProductID*@
+                                    </td>
+                                    <td>
+                                       @* @item.ProductName*@
+                                    </td>
+                                    <td>
+                                        @*@item.Price*@
+                                    </td>
+                                    <td>
+                                       @* @item.CateProduct*@
+                                    </td>
+                                    <td>
+                                       @* @item.Detail*@
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td class="text-primary">
+                                        <a href="@Url.Action("EditPro", "Product")" class="btn btn-primary pull-right btn-sm">Edit</a>
+                                        <a href="@Url.Action("DeletePro", "Product")" class="btn btn-primary pull-right btn-sm">Delete</a>
+                                    </td>
+                                </tr>
+                            
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        @*<div class="row">
+            <div class="col-sm-12">
+                <div class="pagination font-alt">
+                    <div class="numberpage">Page @(view.PageCount < view.PageNumber ? 0 : view.PageNumber) / @view.PageCount</div>
+                    <div class="page">
+                        @Html.PagedListPager(view, page => Url.Action("Viewproduct",
+                                       new { page }))
+                    </div>
+                </div>
+            </div>
+        </div>
+    }*@
+
+
+</div>
+<style>
+    .pagination {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+        .pagination > li {
+            width: 25px;
+            height: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border: 1px solid;
+            border-radius: 10%;
+            background-color: rebeccapurple;
+        }
+
+    .page {
+        width: 350px;
+    }
+
+    .numberpage {
+        width: 155px;
+        height: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        float: inherit;
+    }
+</style>
