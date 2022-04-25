@@ -1,0 +1,132 @@
+﻿
+@{
+    ViewBag.Title = "ViewStaff";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="col-md-12">
+    @*@{var viewadmin = ViewData["ViewAd"] as PagedList.IPagedList<CDstore.Models.Admin>;*@
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title ">Admin Table</h4>
+                <a class="btn btn-white  btn-sm" href="@Url.Action("AdStaff","Staff")">Add Admin</a>
+
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class=" text-primary">
+                        <th>
+                            ID
+                        </th>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                        <th>
+                            Address
+                        </th>
+                        <th>
+                            Phone
+                        </th>
+                        <th>
+                            Username
+                        </th>
+                        <th>
+                            Password
+                        </th>
+                        <th>
+                        </th>
+                        </thead>
+                        <tbody>
+
+
+
+                           @* @foreach (var item in viewadmin)*@
+                            
+                                <tr>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                       
+                                    </td>
+                                    <td class="text-primary">
+                                        <a href="@Url.Action("EditStaff", "Staff")" class="btn btn-primary pull-right btn-sm">Edit</a>
+                                        @*<a href="@Url.Action("DeleteStaff", "Admin")" class="btn btn-primary pull-right btn-sm">Delete</a>*@
+                                    </td>
+                                </tr>
+                            
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        @*<div class="row">
+            <div class="col-sm-12">
+                <div class="pagination font-alt">
+                    <div class="numberpage">Page @(viewadmin.PageCount < viewadmin.PageNumber ? 0 : viewadmin.PageNumber) / @viewadmin.PageCount</div>
+                    <div class="page">
+                        @Html.PagedListPager(viewadmin, page => Url.Action("ViewAd",
+                                       new { page }))
+                    </div>
+                </div>
+            </div>
+        </div>
+    }*@
+
+
+</div>
+<style>
+    .pagination {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+        .pagination > li {
+            width: 25px;
+            height: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border: 1px solid;
+            border-radius: 10%;
+            background-color: rebeccapurple;
+        }
+
+    .page {
+        width: 350px;
+    }
+
+    .numberpage {
+        width: 155px;
+        height: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        float: inherit;
+    }
+</style>
+

@@ -52,17 +52,66 @@
       <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.Configuration, Version=6.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Configuration.6.0.1\lib\net461\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Configuration.Abstractions.6.0.0\lib\net461\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Primitives.6.0.0\lib\net461\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="PayPal, Version=1.9.1.0, Culture=neutral, PublicKeyToken=5b4afc1ccaef40fb, processorArchitecture=MSIL">
+      <HintPath>packages\PayPal.1.9.1\lib\net451\PayPal.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.8\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.8\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.8\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.8\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.8\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -80,32 +129,12 @@
     </Reference>
     <Reference Include="System.Net.Http.WebRequest">
     </Reference>
-    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Optimization">
       <HintPath>packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -128,10 +157,20 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CustomerController.cs" />
+    <Compile Include="Areas\Admin\Controllers\IndexAdController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OrderController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
+    <Compile Include="Areas\Admin\Controllers\StaffController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CategoryProductController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\PaypalController.cs" />
     <Compile Include="Controllers\PositionController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
@@ -140,6 +179,8 @@
     <Compile Include="Models\Bill.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CartItemViewModel.cs" />
+    <Compile Include="Models\CartModel.cs" />
     <Compile Include="Models\CategoryProduct.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -167,31 +208,116 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\NVC.cs" />
+    <Compile Include="Models\Order.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Position.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Product.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProductViewModel.cs" />
     <Compile Include="Models\RandomGenerator.cs" />
+    <Compile Include="Models\RandomGenerator_Product.cs" />
+    <Compile Include="Models\RandomGenerator_Bill.cs" />
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\UserCart.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pay\GetDataPaypal.cs" />
+    <Compile Include="Pay\Ord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\Data\assets\css\material-dashboard.css" />
+    <Content Include="Areas\Admin\Data\assets\css\material-dashboard.min.css" />
+    <Content Include="Areas\Admin\Data\assets\css\partials\dashboard\core\bootstrap\scss\bootstrap-grid.css" />
+    <Content Include="Areas\Admin\Data\assets\css\partials\dashboard\core\bootstrap\scss\bootstrap-reboot.css" />
+    <Content Include="Areas\Admin\Data\assets\css\partials\dashboard\core\bootstrap\scss\bootstrap.css" />
+    <Content Include="Areas\Admin\Data\assets\css\partials\kit\core\bootstrap\scss\bootstrap-grid.css" />
+    <Content Include="Areas\Admin\Data\assets\css\partials\kit\core\bootstrap\scss\bootstrap-reboot.css" />
+    <Content Include="Areas\Admin\Data\assets\css\partials\kit\core\bootstrap\scss\bootstrap.css" />
+    <Content Include="Areas\Admin\Data\assets\css\test\material-dashboard.css" />
+    <Content Include="Areas\Admin\Data\assets\demo\demo.css" />
+    <Content Include="Areas\Admin\Data\assets\demo\demo.js" />
+    <Content Include="Areas\Admin\Data\assets\img\apple-icon.png" />
+    <Content Include="Areas\Admin\Data\assets\img\cover.jpg" />
+    <Content Include="Areas\Admin\Data\assets\img\faces\avatar.jpg" />
+    <Content Include="Areas\Admin\Data\assets\img\faces\card-profile1-square.jpg" />
+    <Content Include="Areas\Admin\Data\assets\img\faces\card-profile2-square.jpg" />
+    <Content Include="Areas\Admin\Data\assets\img\faces\marc.jpg" />
+    <Content Include="Areas\Admin\Data\assets\img\favicon.png" />
+    <Content Include="Areas\Admin\Data\assets\img\mask.png" />
+    <Content Include="Areas\Admin\Data\assets\img\new_logo.png" />
+    <Content Include="Areas\Admin\Data\assets\img\sidebar-1.jpg" />
+    <Content Include="Areas\Admin\Data\assets\img\sidebar-2.jpg" />
+    <Content Include="Areas\Admin\Data\assets\img\sidebar-3.jpg" />
+    <Content Include="Areas\Admin\Data\assets\img\sidebar-4.jpg" />
+    <Content Include="Areas\Admin\Data\assets\js\core\bootstrap-material-design.min.js" />
+    <Content Include="Areas\Admin\Data\assets\js\core\jquery.min.js" />
+    <Content Include="Areas\Admin\Data\assets\js\core\popper.min.js" />
+    <Content Include="Areas\Admin\Data\assets\js\material-dashboard.js" />
+    <Content Include="Areas\Admin\Data\assets\js\material-dashboard.min.js" />
+    <Content Include="Areas\Admin\Data\assets\js\plugins\bootstrap-notify.js" />
+    <Content Include="Areas\Admin\Data\assets\js\plugins\chartist.min.js" />
+    <Content Include="Areas\Admin\Data\assets\js\plugins\perfect-scrollbar.jquery.min.js" />
+    <Content Include="asset\css\aos.css" />
+    <Content Include="asset\css\bootstrap.min.css" />
+    <Content Include="asset\css\bootstrap\bootstrap-grid.css" />
+    <Content Include="asset\css\bootstrap\bootstrap-reboot.css" />
+    <Content Include="asset\css\jquery-ui.css" />
+    <Content Include="asset\css\magnific-popup.css" />
+    <Content Include="asset\css\MyStyle.css" />
+    <Content Include="asset\css\owl.carousel.min.css" />
+    <Content Include="asset\css\owl.theme.default.min.css" />
+    <Content Include="asset\css\style.css" />
+    <Content Include="asset\fonts\icomoon\demo-files\demo.css" />
+    <Content Include="asset\fonts\icomoon\demo-files\demo.js" />
+    <Content Include="asset\fonts\icomoon\demo.html" />
+    <Content Include="asset\fonts\icomoon\fonts\icomoon.svg" />
+    <Content Include="asset\fonts\icomoon\Read Me.txt" />
+    <Content Include="asset\fonts\icomoon\style.css" />
+    <Content Include="asset\images\blog_1.jpg" />
+    <Content Include="asset\images\children.jpg" />
+    <Content Include="asset\images\cloth_1.jpg" />
+    <Content Include="asset\images\cloth_2.jpg" />
+    <Content Include="asset\images\cloth_3.jpg" />
+    <Content Include="asset\images\hero_1.jpg" />
+    <Content Include="asset\images\hero_1.png" />
+    <Content Include="asset\images\men.jpg" />
+    <Content Include="asset\images\person_1.jpg" />
+    <Content Include="asset\images\person_2.jpg" />
+    <Content Include="asset\images\person_3.jpg" />
+    <Content Include="asset\images\person_4.jpg" />
+    <Content Include="asset\images\shoe.png" />
+    <Content Include="asset\images\shoe_1.jpg" />
+    <Content Include="asset\images\women.jpg" />
+    <Content Include="asset\js\aos.js" />
+    <Content Include="asset\js\bootstrap.min.js" />
+    <Content Include="asset\js\jquery-3.3.1.min.js" />
+    <Content Include="asset\js\jquery-ui.js" />
+    <Content Include="asset\js\jquery.magnific-popup.min.js" />
+    <Content Include="asset\js\main.js" />
+    <Content Include="asset\js\owl.carousel.min.js" />
+    <Content Include="asset\js\popper.min.js" />
+    <Content Include="asset\js\slick.min.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
       <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -200,6 +326,99 @@
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="asset\fonts\icomoon\fonts\icomoon.eot" />
+    <Content Include="asset\fonts\icomoon\fonts\icomoon.ttf" />
+    <Content Include="asset\fonts\icomoon\fonts\icomoon.woff" />
+    <Content Include="asset\fonts\icomoon\selection.json" />
+    <Content Include="asset\scss\.DS_Store" />
+    <Content Include="asset\scss\bootstrap\.DS_Store" />
+    <Content Include="asset\scss\bootstrap\bootstrap-grid.scss" />
+    <Content Include="asset\scss\bootstrap\bootstrap-reboot.scss" />
+    <Content Include="asset\scss\bootstrap\bootstrap.scss" />
+    <Content Include="asset\scss\bootstrap\mixins\_alert.scss" />
+    <Content Include="asset\scss\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="asset\scss\bootstrap\mixins\_badge.scss" />
+    <Content Include="asset\scss\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="asset\scss\bootstrap\mixins\_box-shadow.scss" />
+    <Content Include="asset\scss\bootstrap\mixins\_breakpoints.scss" />
+    <Content Include="asset\scss\bootstrap\mixins\_buttons.scss" />
+    <Content Include="asset\scss\bootstrap\mixins\_caret.scss" />
+    <Content Include="asset\scss\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="asset\scss\bootstrap\mixins\_float.scss" />
+    <Content Include="asset\scss\bootstrap\mixins\_forms.scss" />
+    <Content Include="asset\scss\bootstrap\mixins\_gradients.scss" />
+    <Content Include="asset\scss\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="asset\scss\bootstrap\mixins\_grid.scss" />
+    <Content Include="asset\scss\bootstrap\mixins\_hover.scss" />
+    <Content Include="asset\scss\bootstrap\mixins\_image.scss" />
+    <Content Include="asset\scss\bootstrap\mixins\_list-group.scss" />
+    <Content Include="asset\scss\bootstrap\mixins\_lists.scss" />
+    <Content Include="asset\scss\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="asset\scss\bootstrap\mixins\_pagination.scss" />
+    <Content Include="asset\scss\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="asset\scss\bootstrap\mixins\_resize.scss" />
+    <Content Include="asset\scss\bootstrap\mixins\_screen-reader.scss" />
+    <Content Include="asset\scss\bootstrap\mixins\_size.scss" />
+    <Content Include="asset\scss\bootstrap\mixins\_table-row.scss" />
+    <Content Include="asset\scss\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="asset\scss\bootstrap\mixins\_text-hide.scss" />
+    <Content Include="asset\scss\bootstrap\mixins\_text-truncate.scss" />
+    <Content Include="asset\scss\bootstrap\mixins\_transition.scss" />
+    <Content Include="asset\scss\bootstrap\mixins\_visibility.scss" />
+    <Content Include="asset\scss\bootstrap\utilities\_align.scss" />
+    <Content Include="asset\scss\bootstrap\utilities\_background.scss" />
+    <Content Include="asset\scss\bootstrap\utilities\_borders.scss" />
+    <Content Include="asset\scss\bootstrap\utilities\_clearfix.scss" />
+    <Content Include="asset\scss\bootstrap\utilities\_display.scss" />
+    <Content Include="asset\scss\bootstrap\utilities\_embed.scss" />
+    <Content Include="asset\scss\bootstrap\utilities\_flex.scss" />
+    <Content Include="asset\scss\bootstrap\utilities\_float.scss" />
+    <Content Include="asset\scss\bootstrap\utilities\_position.scss" />
+    <Content Include="asset\scss\bootstrap\utilities\_screenreaders.scss" />
+    <Content Include="asset\scss\bootstrap\utilities\_shadows.scss" />
+    <Content Include="asset\scss\bootstrap\utilities\_sizing.scss" />
+    <Content Include="asset\scss\bootstrap\utilities\_spacing.scss" />
+    <Content Include="asset\scss\bootstrap\utilities\_text.scss" />
+    <Content Include="asset\scss\bootstrap\utilities\_visibility.scss" />
+    <Content Include="asset\scss\bootstrap\_alert.scss" />
+    <Content Include="asset\scss\bootstrap\_badge.scss" />
+    <Content Include="asset\scss\bootstrap\_breadcrumb.scss" />
+    <Content Include="asset\scss\bootstrap\_button-group.scss" />
+    <Content Include="asset\scss\bootstrap\_buttons.scss" />
+    <Content Include="asset\scss\bootstrap\_card.scss" />
+    <Content Include="asset\scss\bootstrap\_carousel.scss" />
+    <Content Include="asset\scss\bootstrap\_close.scss" />
+    <Content Include="asset\scss\bootstrap\_code.scss" />
+    <Content Include="asset\scss\bootstrap\_custom-forms.scss" />
+    <Content Include="asset\scss\bootstrap\_dropdown.scss" />
+    <Content Include="asset\scss\bootstrap\_forms.scss" />
+    <Content Include="asset\scss\bootstrap\_functions.scss" />
+    <Content Include="asset\scss\bootstrap\_grid.scss" />
+    <Content Include="asset\scss\bootstrap\_images.scss" />
+    <Content Include="asset\scss\bootstrap\_input-group.scss" />
+    <Content Include="asset\scss\bootstrap\_jumbotron.scss" />
+    <Content Include="asset\scss\bootstrap\_list-group.scss" />
+    <Content Include="asset\scss\bootstrap\_media.scss" />
+    <Content Include="asset\scss\bootstrap\_mixins.scss" />
+    <Content Include="asset\scss\bootstrap\_modal.scss" />
+    <Content Include="asset\scss\bootstrap\_nav.scss" />
+    <Content Include="asset\scss\bootstrap\_navbar.scss" />
+    <Content Include="asset\scss\bootstrap\_pagination.scss" />
+    <Content Include="asset\scss\bootstrap\_popover.scss" />
+    <Content Include="asset\scss\bootstrap\_print.scss" />
+    <Content Include="asset\scss\bootstrap\_progress.scss" />
+    <Content Include="asset\scss\bootstrap\_reboot.scss" />
+    <Content Include="asset\scss\bootstrap\_root.scss" />
+    <Content Include="asset\scss\bootstrap\_tables.scss" />
+    <Content Include="asset\scss\bootstrap\_tooltip.scss" />
+    <Content Include="asset\scss\bootstrap\_transitions.scss" />
+    <Content Include="asset\scss\bootstrap\_type.scss" />
+    <Content Include="asset\scss\bootstrap\_utilities.scss" />
+    <Content Include="asset\scss\bootstrap\_variables.scss" />
+    <Content Include="asset\scss\style.scss" />
+    <Content Include="asset\scss\_site-base.scss" />
+    <Content Include="asset\scss\_site-blocks.scss" />
+    <Content Include="asset\scss\_site-navbar.scss" />
     <EntityDeploy Include="Models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -207,17 +426,235 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Areas\Admin\Data\assets\css\material-dashboard.css.map" />
+    <Content Include="Areas\Admin\Data\assets\css\partials\dashboard\core\bootstrap\scss\bootstrap-grid.css.map" />
+    <Content Include="Areas\Admin\Data\assets\css\partials\dashboard\core\bootstrap\scss\bootstrap-reboot.css.map" />
+    <Content Include="Areas\Admin\Data\assets\css\partials\dashboard\core\bootstrap\scss\bootstrap.css.map" />
+    <Content Include="Areas\Admin\Data\assets\css\partials\kit\core\bootstrap\scss\bootstrap-grid.css.map" />
+    <Content Include="Areas\Admin\Data\assets\css\partials\kit\core\bootstrap\scss\bootstrap-reboot.css.map" />
+    <Content Include="Areas\Admin\Data\assets\css\partials\kit\core\bootstrap\scss\bootstrap.css.map" />
+    <Content Include="Areas\Admin\Data\assets\js\material-dashboard.js.map" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\bootstrap-grid.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\bootstrap-reboot.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\bootstrap.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\mixins\_alert.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\mixins\_background-variant.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\mixins\_badge.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\mixins\_border-radius.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\mixins\_box-shadow.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\mixins\_breakpoints.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\mixins\_buttons.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\mixins\_caret.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\mixins\_clearfix.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\mixins\_float.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\mixins\_forms.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\mixins\_gradients.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\mixins\_grid-framework.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\mixins\_grid.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\mixins\_hover.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\mixins\_image.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\mixins\_list-group.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\mixins\_lists.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\mixins\_nav-divider.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\mixins\_navbar-align.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\mixins\_pagination.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\mixins\_reset-text.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\mixins\_resize.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\mixins\_screen-reader.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\mixins\_size.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\mixins\_table-row.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\mixins\_text-emphasis.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\mixins\_text-hide.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\mixins\_text-truncate.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\mixins\_transition.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\mixins\_visibility.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\utilities\_align.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\utilities\_background.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\utilities\_borders.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\utilities\_clearfix.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\utilities\_display.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\utilities\_embed.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\utilities\_flex.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\utilities\_float.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\utilities\_position.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\utilities\_screenreaders.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\utilities\_sizing.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\utilities\_spacing.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\utilities\_text.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\utilities\_visibility.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\_alert.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\_badge.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\_breadcrumb.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\_button-group.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\_buttons.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\_card.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\_carousel.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\_close.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\_code.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\_custom-forms.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\_dropdown.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\_forms.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\_functions.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\_grid.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\_images.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\_input-group.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\_jumbotron.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\_list-group.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\_media.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\_mixins.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\_modal.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\_nav.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\_navbar.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\_pagination.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\_popover.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\_print.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\_progress.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\_reboot.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\_root.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\_tables.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\_tooltip.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\_transitions.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\_type.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\_utilities.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\bootstrap\scss\_variables.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\cards\_card-plain.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\cards\_card-profile.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\cards\_card-stats.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\dark-edition\_dark-alert.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\dark-edition\_dark-buttons.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\dark-edition\_dark-card-chart.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\dark-edition\_dark-card-plain.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\dark-edition\_dark-card-stats.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\dark-edition\_dark-card.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\dark-edition\_dark-checkboxes.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\dark-edition\_dark-colors.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\dark-edition\_dark-dropdown.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\dark-edition\_dark-fixed-plugin.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\dark-edition\_dark-footer.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\dark-edition\_dark-forms.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\dark-edition\_dark-heartbeat-animation.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\dark-edition\_dark-mixins.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\dark-edition\_dark-navbar.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\dark-edition\_dark-popover-tooltip.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\dark-edition\_dark-radios.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\dark-edition\_dark-sidebar.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\dark-edition\_dark-tables.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\dark-edition\_dark-tabs.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\dark-edition\_dark-variables.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\mixins\_alert.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\mixins\_animations.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\mixins\_breakpoints.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\mixins\_buttons.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\mixins\_chartist.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\mixins\_colored-shadows.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\mixins\_drawer.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\mixins\_forms.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\mixins\_hover.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\mixins\_layout.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\mixins\_navbar-colors.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\mixins\_navs.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\mixins\_sidebar-color.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\mixins\_transparency.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\mixins\_type.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\mixins\_utilities.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\mixins\_variables.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\mixins\_vendor-prefixes.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\plugins\_animate.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\plugins\_chartist.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\plugins\_perfect-scrollbar.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\variables\_body.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\variables\_bootstrap-material-design-base.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\variables\_bootstrap-material-design.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\variables\_brand.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\variables\_buttons.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\variables\_card.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\variables\_code.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\variables\_colors-map.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\variables\_colors.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\variables\_custom-forms.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\variables\_drawer.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\variables\_dropdown.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\variables\_forms.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\variables\_layout.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\variables\_list-group.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\variables\_menu.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\variables\_modals.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\variables\_nav.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\variables\_pagination.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\variables\_shadow.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\variables\_snackbar.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\variables\_spacing.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\variables\_state.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\variables\_tables.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\variables\_tooltip.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\variables\_type.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\_alerts.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\_buttons.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\_cards.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\_checkboxes.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\_core-bootstrap.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\_dark-edition.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\_dropdown.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\_example-pages.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\_fixed-plugin.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\_footers.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\_forms.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\_headers.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\_images.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\_info-areas.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\_input-group.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\_misc.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\_mixins.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\_navbar.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\_popover.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\_popups.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\_radios.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\_responsive.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\_ripples.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\_sidebar-and-main-panel.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\_social-buttons.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\_tables.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\_tabs.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\_togglebutton.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\_tooltip.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\_type.scss" />
+    <Content Include="Areas\Admin\Data\assets\scss\material-dashboard\_variables.scss" />
+    <Content Include="Areas\Admin\Views\Shared\_PartialFooter_Ad.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_PartialNavbar_Ad.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_PartialSideBar_Ad.cshtml" />
+    <Content Include="Areas\Admin\Views\IndexAd\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Customer\ViewCus.cshtml" />
+    <Content Include="Areas\Admin\Views\Customer\DeleteCus.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\ViewPro.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Pro.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\EditPro.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\DeletePro.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\ViewCategory.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\EditCate.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\DeleteCate.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\ViewOrd.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\Ord.cshtml" />
+    <Content Include="Areas\Admin\Views\Staff\ViewStaff.cshtml" />
+    <Content Include="Areas\Admin\Views\Staff\EditStaff.cshtml" />
+    <Content Include="Areas\Admin\Views\Staff\AdStaff.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\cart.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\jquery.lightbox-0.5.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\site.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -229,19 +666,36 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\CategoryProduct\AddCategoryProduct.cshtml" />
     <Content Include="Views\CategoryProduct\Index.cshtml" />
-    <Content Include="Views\Position\Index.cshtml" />
     <Content Include="Views\Position\AddPosition.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Cart\Checkout.cshtml" />
+    <Content Include="Views\Login\Register.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Login\LoginUser.cshtml" />
+    <Content Include="Views\Product\AddProduct.cshtml" />
+    <Content Include="Views\Paypal\Success.cshtml" />
+    <Content Include="Views\Paypal\Success1.cshtml" />
+    <Content Include="Views\Paypal\GetDataPaypal.cshtml" />
+    <Content Include="Views\Cart\Order_Tracking.cshtml" />
+    <Content Include="Views\Cart\Order_Tracking1.cshtml" />
+    <Content Include="Views\Cart\Order_Tracking2.cshtml" />
+    <Content Include="Views\Cart\Order_Tracking3.cshtml" />
+    <Content Include="Views\OrderManage\Index.cshtml" />
+    <Content Include="Views\Cart\CartBag.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Views\IndexAdmin\" />
+    <Folder Include="Areas\Admin\Views\Ord\" />
+    <Folder Include="Areas\Admin\Views\Pro\" />
+    <Folder Include="Content\Images\" />
     <Folder Include="Views\Customer\" />
     <Folder Include="Views\Employee\" />
-    <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -285,6 +739,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
+      <UserProperties appsetting_1json__JsonSchema="https://json.schemastore.org/appsettings.json" />
     </VisualStudio>
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
