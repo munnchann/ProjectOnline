@@ -1,37 +1,37 @@
 Shop_online
 website e/commerce
 
-Programming languages:
+.Programming languages:
 
-HTML/CSS
+- HTML/CSS
 
-JavaScript
+- JavaScript
 
-C#
+- C#
 
-SQL Server
+- SQL Server
 
-Frameworks:
+.Frameworks:
 
-ASP.Net
+- ASP.Net
 
-JQuery
+- JQuery
 
-Main function
+- Main function
 
-Admin Manager Page
+- Admin Manager Page
 
-Authentication
+- Authentication
 
-Sreach
+- Search
 
-List Page Product
+- List Page Product
 
-Order Product
+- Order Product
 
-Paypal Payment
+- Paypal Payment
 
-Members: 02
+.Members: 02
 
 NGUYEN NGOC TU QUYEN - Aptech
 
