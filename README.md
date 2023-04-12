@@ -30,9 +30,3 @@ website e/commerce
 - Order Product
 
 - Paypal Payment
-
-.Members: 02
-
-NGUYEN NGOC TU QUYEN - Aptech
-
-LAM THANH PHU - Aptech
