@@ -10,14 +10,12 @@ website e/commerce
 - C#
 
 - SQL Server
-
-.Frameworks:
-
+- 
 - ASP.Net
 
 - JQuery
 
-- Main function
+.Main function:
 
 - Admin Manager Page
 
